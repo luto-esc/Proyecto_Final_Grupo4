@@ -1,0 +1,18 @@
+{% extends 'base.html' %} <!--nota del codigo: SE EXTIENDE EL BLOQUE PARA SEGUIR-->
+
+{% block contenido %}
+
+	<h1>hola aqui estan los posts </h1>
+	
+	{% for p in apps.posts %}
+		
+		<div>
+			<img src="{{ p.imagen.url }}">
+			<h3>{{p.titulo}}</h3>
+			<p>{{p.cuerpo}}</p>
+		</div>
+	
+	{% endfor %}
+
+
+{% endblock contenido %}

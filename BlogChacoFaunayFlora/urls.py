@@ -26,8 +26,9 @@ from django.conf.urls.static import static # las imagenes cargen
 urlpatterns = [
     path('admin/', admin.site.urls),
     
-    path('', views.Home, name = 'path_home'), #Home
-    path('/contacto', views.Contacto, name = 'path_contacto'), #Contacto
-    path('/nosotros', views.Nosotros, name = 'path_nosotros'), #Nosotros
+    path('', views.Home, name = 'path_home'), #Post
+    path('contacto/', views.Contacto, name = 'path_contacto'), #Contacto
+    path('nosotros/', views.Nosotros, name = 'path_nosotros'), #Nosotros
+    path('posts/', include('apps.posts.urls'))
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) #Permite que las imagenes que son dinamicas se muestren en el navegador
