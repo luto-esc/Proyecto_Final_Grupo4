@@ -1,0 +1,17 @@
+{% extends 'base.html' %} <!--nota del codigo: SE EXTIENDE EL BLOQUE PARA SEGUIR-->
+
+{% block contenido %}
+
+	<h1>hola aqui estan todas la fauna </h1>
+	
+	{% for t in tarjetas_fauna %}
+		
+		<div>
+			<img src="{{ t.imagen.url }}">
+			<h3>{{t.nombre}}</h3>
+		</div>
+	
+	{% endfor %}
+
+
+{% endblock contenido %}
