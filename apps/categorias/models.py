@@ -10,7 +10,7 @@ class Categoria_Fauna_Clase(models.Model):
 	def __str__(self):
 		return self.clase
 
-class Categoria_Fauna_Diega(models.Model):
+class Categoria_Fauna_Dieta(models.Model):
 	
 	dieta = models.CharField(max_length = 100)
 
