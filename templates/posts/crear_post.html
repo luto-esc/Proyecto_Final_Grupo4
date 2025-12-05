@@ -1,0 +1,18 @@
+{% extends 'base.html' %} <!--nota del codigo: SE EXTIENDE EL BLOQUE PARA SEGUIR-->
+
+{% block contenido %}
+
+	<h1>Crear Publicacion</h1>
+
+	<form method="POST" enctype="multipart/form-date"> {% csrf_token %}
+		{{form.as_p}}
+		<button type="sumbit">Crear</button>
+		<a href="{% url 'posts:path_listar_posts' %}">Cancelar</a>
+		
+	</form>
+		
+	
+	
+
+
+{% endblock contenido %}

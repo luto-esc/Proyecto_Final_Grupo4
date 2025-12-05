@@ -2,6 +2,22 @@ from django.db import models
 
 # Create your models here.
 
+
+
+
+#///////////// CATEGORIA POST /////////////////////////
+
+class Categoria_Sobre(models.Model):
+
+	sobre = models.CharField(max_length = 100)
+	
+	def __str__(self):
+		return self.sobre
+
+#///////////// CATEGORIA POST /////////////////////////
+
+
+
 #///////////// CATEGORIAS DE FAUNA /////////////////////////
 class Categoria_Fauna_Clase(models.Model):
 	
@@ -37,10 +53,10 @@ class Categoria_Flora_Tipo(models.Model):
 
 class Categoria_Flora_Hambiente(models.Model):
 	
-	Hambiente = models.CharField(max_length = 100)
+	hambiente = models.CharField(max_length = 100)
 
 	def __str__(self):
-		return self.Hambiente
+		return self.hambiente
 
 class Categoria_Flora_Origen(models.Model):
 	
@@ -50,3 +66,4 @@ class Categoria_Flora_Origen(models.Model):
 		return self.origen
 
 #///////////// CATEGORIAS DE FLORA /////////////////////////
+

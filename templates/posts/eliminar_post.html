@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+	
+	<form method="post">{% csrf_token %}
+    	<p>Estas seguro que desa eliminar la publicacion?</p>
+	    {{ form }}
+	    <input type="submit" value="CONFIRMAR">
+	    <a href="{% url 'posts:path_listar_posts' %}"> Cancelar</a>
+	</form>
+
+{% endblock contenido %}
