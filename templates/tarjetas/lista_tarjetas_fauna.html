@@ -3,6 +3,8 @@
 {% block contenido %}
 
 	<h1>hola aqui estan todas la fauna </h1>
+
+	<a href=" {% url 'tarjetas:path_crear_tarjeta_fauna' %}">Crear tarjeta fauna</a>
 	
 	{% for t in tarjetas_fauna %}
 		

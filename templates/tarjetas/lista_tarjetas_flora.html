@@ -2,13 +2,19 @@
 
 {% block contenido %}
 
-	<h1>hola aqui estan todas las flora </h1>
+	<h1>hola aqui estan todas la flora  </h1>
 	
+	<a href="{% url 'tarjetas:path_crear_tarjeta_flora' %}">Crear Tarjeta Flora</a>
+
+
 	{% for t in tarjetas_flora %}
 		
 		<div>
+			<a href="{% url 'tarjetas:path_detalle_tarjeta_flora' t.pk %}">
 			<img src="{{ t.imagen.url }}">
+			</a>
 			<h3>{{t.nombre}}</h3>
+			<a href="{% url 'tarjetas:path_actualizar_tarjeta_flora' t.pk %}">Actualizar Tarjeta</a>
 		</div>
 	
 	{% endfor %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %} <!--nota del codigo: SE EXTIENDE EL BLOQUE PARA SEGUIR-->
+
+{% block contenido %}
+
+	<h1>Actualizar Tarjeta de Flora</h1>
+
+	<form method="POST" enctype="multipart/form-date"> {% csrf_token %}
+		{{form.as_p}}
+		<button type="sumbit">Crear</button>
+		<a href="{% url 'tarjetas:path_listar_tarjetas_flora' t.pk %}">Cancelar</a>
+		
+	</form>
+		
+	
+	
+
+
+{% endblock contenido %}

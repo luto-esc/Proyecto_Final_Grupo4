@@ -10,6 +10,7 @@ from django.db import models
 class Categoria_Sobre(models.Model):
 
 	sobre = models.CharField(max_length = 100)
+	descripcion = models.TextField(default="Sin descripción")
 	
 	def __str__(self):
 		return self.sobre
@@ -19,51 +20,25 @@ class Categoria_Sobre(models.Model):
 
 
 #///////////// CATEGORIAS DE FAUNA /////////////////////////
-class Categoria_Fauna_Clase(models.Model):
+class Categoria_Fauna(models.Model):
 	
-	clase = models.CharField(max_length = 100)
+	nombre = models.CharField(max_length = 100)
+	descripcion = models.TextField(default="Sin descripción")
 
 	def __str__(self):
-		return self.clase
-
-class Categoria_Fauna_Dieta(models.Model):
-	
-	dieta = models.CharField(max_length = 100)
-
-	def __str__(self):
-		return self.dieta
-
-class Categoria_Fauna_Estado(models.Model):
-	
-	estado = models.CharField(max_length = 100)
-
-	def __str__(self):
-		return self.estado
+		return self.nombre
 
 #///////////// CATEGORIAS DE FAUNA /////////////////////////
 
 
 #///////////// CATEGORIAS DE FLORA /////////////////////////
-class Categoria_Flora_Tipo(models.Model):
+class Categoria_Flora(models.Model):
 	
-	tipo = models.CharField(max_length = 100)
+	nombre = models.CharField(max_length = 100)
+	descripcion = models.TextField(default="Sin descripción")
 
 	def __str__(self):
-		return self.tipo
-
-class Categoria_Flora_Hambiente(models.Model):
-	
-	hambiente = models.CharField(max_length = 100)
-
-	def __str__(self):
-		return self.hambiente
-
-class Categoria_Flora_Origen(models.Model):
-	
-	origen = models.CharField(max_length = 100)
-
-	def __str__(self):
-		return self.origen
+		return self.nombre
 
 #///////////// CATEGORIAS DE FLORA /////////////////////////
 

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contenido %}
+
+	<div>
+		<img src="{{ tarjetas_flora.imagen.url }}">
+		<h2> {{ tarjetas_flora.nombre }} </h2>
+		<p> {{ tarjetas_flora.descripcion }}</p>
+		<p> {{ tarjetas_flora.categoria }} </p>
+
+
+	</div>
+
+
+{% endblock contenido %}
