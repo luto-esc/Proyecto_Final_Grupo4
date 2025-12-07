@@ -1,21 +1,20 @@
-{% extends 'base.html' %} <!--nota del codigo: SE EXTIENDE EL BLOQUE PARA SEGUIR-->
+{% extends 'base.html' %}
 
 {% block contenido %}
-
-	<h1>hola aqui estan todas la fauna </h1>
-
-	<a href=" {% url 'tarjetas:path_crear_tarjeta_fauna' %}">Crear tarjeta fauna</a>
-	
-	{% for t in tarjetas_fauna %}
+	<main>
+		<h2>Publicaciones sobre flora</h2>
+		<a href=" {% url 'tarjetas:path_crear_tarjeta_fauna' %}">Crear tarjeta fauna</a>
 		
-		<div>
-			<a href="{% url 'tarjetas:path_detalle_tarjeta_fauna' t.pk %}">
+		<section id="tarjetas">
+		{% for t in tarjetas_fauna %}
+			<article>
+				<h3>{{t.nombre}}</h3>
 				<img src="{{ t.imagen.url }}">
-			</a>
-			<h3>{{t.nombre}}</h3>
-		</div>
-	
-	{% endfor %}
-
-
+				<p>{{t.descripcion}}</p>
+				<a href="{% url 'tarjetas:path_detalle_tarjeta_fauna' t.pk %}">Ver detalle</a>
+				<a href="{% url 'tarjetas:path_eliminar_tarjeta_fauna' t.pk %}">Eliminar</a>
+			</article>
+		{% endfor %}
+		</section>
+	</main>
 {% endblock contenido %}

@@ -2,13 +2,13 @@
 
 {% block contenido %}
 	<main>		
-		<h2>Eliminar publicación</h2>
+		<h2>Eliminar tarjeta</h2>
 		<section id="publicaciones">
-			<p>¿Está seguro q desea eliminar la publicación?</p>
+			<p>¿Está seguro que desea eliminar la tarjeta?</p>
 			<form method="POST">{% csrf_token %}
 				{{ form }}
 				<button type="submit">Eliminar</button>
-				<a href="{% url 'posts:path_listar_posts' %}">Cancelar</a>
+				<a href="{% url 'tarjetas:path_listar_tarjetas_fauna' %}">Cancelar</a>
 			</form>
 		</section>
 	</main>

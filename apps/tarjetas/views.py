@@ -35,23 +35,34 @@ class Crear_Tarjeta_Fauna(CreateView):
 	model = Tarjeta_Fauna
 	template_name = 'tarjetas/crear_tarjeta_fauna.html'
 	form_class = FormularioCrearActualizarTarjetaFauna
-	succues_url = reverse_lazy('path_listar_tarjetas_fauna')
+	success_url = reverse_lazy('tarjetas:path_listar_tarjetas_fauna')
 
 class Crear_Tarjeta_Flora(CreateView):
 	model = Tarjeta_Flora
 	template_name = 'tarjetas/crear_tarjeta_flora.html'
 	form_class = FormularioCrearActualizarTarjetaFlora
-	succues_url = reverse_lazy('path_listar_tarjetas_flora')
+	success_url = reverse_lazy('tarjetas:path_listar_tarjetas_flora')
 
 #------------------Actualizar-------------------
 class Actualizar_Tarjeta_Fauna(CreateView):
 	model = Tarjeta_Fauna
 	template_name = 'tarjetas/actualizar_tarjeta_fauna.html'
 	form_class = FormularioCrearActualizarTarjetaFauna
-	succues_url = reverse_lazy('path_listar_tarjetas_fauna')
+	success_url = reverse_lazy('tarjetas:path_listar_tarjetas_fauna')
 
 class Actualizar_Tarjeta_Flora(CreateView):
 	model = Tarjeta_Flora
 	template_name = 'tarjetas/actualizar_tarjeta_flora.html'
 	form_class = FormularioCrearActualizarTarjetaFlora
-	succues_url = reverse_lazy('path_listar_tarjetas_flora')
+	success_url = reverse_lazy('tarjetas:path_listar_tarjetas_flora')
+
+#------------------ELIMINAR-------------------
+class Eliminar_Tarjeta_Fauna(DeleteView):
+	model = Tarjeta_Fauna
+	template_name = 'tarjetas/eliminar_tarjeta_fauna.html'
+	success_url = reverse_lazy('tarjetas:path_listar_tarjetas_fauna')
+
+class Eliminar_Tarjeta_Flora(DeleteView):
+	model = Tarjeta_Flora
+	template_name = 'tarjetas/eliminar_tarjeta_flora.html'
+	success_url = reverse_lazy('tarjetas:path_listar_tarjetas_flora')

@@ -1,18 +1,13 @@
-{% extends 'base.html' %} <!--nota del codigo: SE EXTIENDE EL BLOQUE PARA SEGUIR-->
+{% extends 'base.html' %}
 
 {% block contenido %}
-
-	<h1>Crear Tarjeta de Fauna</h1>
-
-	<form method="POST" enctype="multipart/form-date"> {% csrf_token %}
-		{{form.as_p}}
-		<button type="sumbit">Crear</button>
-		<a href="{% url 'tarjetas:path_listar_tarjetas_fauna' %}">Cancelar</a>
-		
-	</form>
-		
-	
-	
-
-
+	<main>
+	<h2>Crear tarjeta de fauna</h2>
+		<section id="publicaciones">
+			<form method="POST" enctype="multipart/form-date"> {% csrf_token %}
+			{{form.as_p}}
+			<button type="sumbit">Crear</button>
+			<a href="{% url 'tarjetas:path_listar_tarjetas_fauna' %}">Cancelar</a>
+		</section>
+	</main>
 {% endblock contenido %}

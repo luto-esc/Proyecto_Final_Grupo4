@@ -1,23 +1,20 @@
-{% extends 'base.html' %} <!--nota del codigo: SE EXTIENDE EL BLOQUE PARA SEGUIR-->
+{% extends 'base.html' %}
 
 {% block contenido %}
-
-	<h1>hola aqui estan todas la flora  </h1>
-	
-	<a href="{% url 'tarjetas:path_crear_tarjeta_flora' %}">Crear Tarjeta Flora</a>
-
-
-	{% for t in tarjetas_flora %}
+	<main>
+		<h2>Publicaciones sobre flora</h2>
+		<a href=" {% url 'tarjetas:path_crear_tarjeta_flora' %}">Crear tarjeta fauna</a>
 		
-		<div>
-			<a href="{% url 'tarjetas:path_detalle_tarjeta_flora' t.pk %}">
-			<img src="{{ t.imagen.url }}">
-			</a>
-			<h3>{{t.nombre}}</h3>
-			<a href="{% url 'tarjetas:path_actualizar_tarjeta_flora' t.pk %}">Actualizar Tarjeta</a>
-		</div>
-	
-	{% endfor %}
-
-
+		<section id="tarjetas">
+		{% for t in tarjetas_flora %}
+			<article>
+				<h3>{{t.nombre}}</h3>
+				<img src="{{ t.imagen.url }}">
+				<p>{{t.descripcion}}</p>
+				<a href="{% url 'tarjetas:path_detalle_tarjeta_flora' t.pk %}">Ver detalle</a>
+				<a href="{% url 'tarjetas:path_eliminar_tarjeta_flora' t.pk %}">Eliminar</a>
+			</article>
+		{% endfor %}
+		</section>
+	</main>
 {% endblock contenido %}

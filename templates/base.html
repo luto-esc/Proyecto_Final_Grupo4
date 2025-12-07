@@ -1,34 +1,59 @@
 {% load static %}
-
-
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChacoFayFl</title>
-  <!--  <link rel="stylesheet" href="{% static 'css/reset.css' %}" /> -->
-  <!--  <link rel="stylesheet" href="{% static 'css/main.css' %}" /> -->
+	<title>chacoverde</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!-- <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}" /> -->
+	<!-- <link rel="stylesheet" type="text/css" href="{% static 'css/main1.css' %}" /> -->
 </head>
+
 <body>
-    <header>
-        <h1>chaco<em>verde</em></h1>
-        <nav>
-            <ul>
-                <li> <a href="{% url 'path_home' %}">Inicio</a></li>
-                <li> <a href="{% url 'posts:path_listar_posts' %}">Publicaciones</a></li>
-                <li> <a href="{% url 'tarjetas:path_listar_tarjetas_flora' %}">Flora</a></li>
-                <li> <a href="{% url 'tarjetas:path_listar_tarjetas_fauna' %}">Fauna</a></li>
-                <li> <a href="{% url 'path_nosotros' %}">Nostros</a></li>
-            </ul>
-        </nav>
-        <button>Acceder</button>
-    </header>
-
-
+	<header>
+		<h1>chacoverde</h1>
+		<nav>
+			<ul>
+                <li><a href="{% url 'path_home' %}">Inicio</a></li>
+                <li><a href="{% url 'posts:path_listar_posts' %}">Publicaciones</a></li>
+                <li><a href="{% url 'tarjetas:path_listar_tarjetas_flora' %}">Flora</a></li>
+                <li><a href="{% url 'tarjetas:path_listar_tarjetas_fauna' %}">Fauna</a></li>
+                <li><a href="{% url 'path_nosotros' %}">Nosotros</a></li>
+			</ul>
+		</nav>
+		<button>Acceder</button>
+	</header>
+	
+	<aside>
+		<h3>Publicaciones</h3>
+		<ul>
+			{% for c in categorias %}
+			<li>
+				<a href="{% url 'posts:path_filtrados_categoria_post' c.pk %}"> {{ c.sobre }} </a>
+			</li>
+			{% endfor %}
+			<li><a href="#">Mamíferos</a></li>
+			<li><a href="#">Anfibios</a></li>
+			<li><a href="#">Aves</a></li>
+			<li><a href="#">Reptiles</a></li>
+			<li><a href="#">Peces</a></li>
+			<li><a href="#">Bosque seco</a></li>
+			<li><a href="#">Bosque de ribera</a></li>
+			<li><a href="#">Río</a></li>
+			<li><a href="#">Humedal</a></li>
+		</ul>
+	</aside>
+		
     {% block contenido %}
 
     {% endblock contenido %}
-
+	
+	<footer>
+		<h4>Otros contactos</h4>
+		<ul>
+			<li>Teléfono: 362 412-3456</li>
+			<li>E-mail: chacoverde@gmail.com</li>
+		</ul>
+	</footer>
 </body>
 </html>

@@ -64,15 +64,15 @@ header {
 	min-width: 300px;
 	background-color: rgba(42, 166, 62, 84%);
 	padding:1.5em 10em;
-	margin-bottom:-2em
+	margin-bottom:-1em
 }
 header h1 {
 	/*margin: auto;*/
 	/*padding: 3rem;*/
 	text-shadow: -1px -1px 0 rgb(255 255 245),
-		-2px -2px 0 #FFDF20,
-		-3px -3px 0 #FFDF20,
-		-4px -4px 0 #333,
+		-2px -2px 0 #ccc,
+		-3px -3px 0 #ccc,
+		-4px -4px 0 #666,
 		-5px -5px 0 #2AA63E,
 		-6px -6px 0 #2AA63E,
 		-7px -7px 1px rgba(60 60 60 / 60%),
@@ -99,11 +99,17 @@ header ul li {
 }
 header button {
 	padding:1em 2em;
+	padding-left:3.5em;
 	font-size:1.2em;
 	font-weight:bold;
+	color: rgb(255 255 245);
 	background-color: rgba(42, 166, 62, 84%);
-	border: 1px solid rgb(51 51 51 / 75%);
+	background-image:url("../img/circle-user-round.png");
+	background-repeat: no-repeat;
+	background-position: 1em 0.6em;
+	border: 1px solid rgb(51 51 51 / 45%);
 	border-radius:50rem;
+	text-shadow: 1px -1px 0 #333;
 }
 
 header p {
@@ -132,29 +138,39 @@ header a:hover {
 			HERO
 						*/
 section#hero {
-	display:flex;
-	align-items:flex-start;
+	display:grid;
+	grid-auto-flow: column;
+	grid-template-columns: repeat(27, minmax(auto, 1fr));
+	gap:1rem;
+	
 	max-width: 1180px;
-	min-height:60vh;
+	/*min-height:10vh;*/
 	margin:auto;
-	margin-bottom:-6em;
-	padding: 6em 3em;
+	margin-bottom:-1em;
+	padding: 6em 0;
+	
+	/*padding: 6em 3em;
 	padding-right: 15em;
-	padding-left: 7.5em;
+	padding-left: 7.5em;*/
 	background-color: rgba(51, 51, 51, 45%);
 	border-radius:1em;
 }
+section#hero section {
+	grid-row: 1;
+	grid-column: 12 / 23;
+	width:auto
+}
 section#hero h2 {
-	font-size: 6rem;
+	font-size: 4.5rem;
 	color:rgb(255 255 245);
-	text-shadow: -3px 3px 1px #333;
+	text-shadow: -1px 3px 1px #333;
 	margin: 3rem;
 	margin-top: 0;
 	text-wrap: balanced;
 }
 section#hero p {
 	color: rgb(255, 255, 240);
-	text-shadow: 1px 1px 1px rgb(51 51 51 / 75%);
+	text-shadow: -1px 1px 1px #000;
 	font-size: 1.5em;
 	margin: 0 3em;
 	padding: 1em;
@@ -163,11 +179,17 @@ section#hero p {
 	/*background-image: linear-gradient(to top, rgb(51 51 51 / 90%), rgb(51 51 51 / 0));*/
 }
 section#hero img {
-	border-radius: 1em 18em 1em 18em;
-	border: 1px solid rgba(42, 166, 62, 84%); /* VERDEEEEEEEEEEEEEE  */
+	grid-row: 1;
+	grid-column: 3 / 12;
+
+	border-radius: 1em 12em 1em 12em;
+	border-left: 1px solid rgba(42, 166, 62, 60%); /* VERDEEEEEEEEEEEEEE  */
+	border-right: 1px solid rgba(255, 255, 245, 45%);
+	border-top: 3px solid rgba(255, 255, 245, 45%);
+	border-bottom: 3px solid rgba(42, 166, 62, 60%);
 	padding:1em;
 	/*align-self: center;*/
-	max-width:39%;
+	max-width:auto;
 	min-height:500px;
 	object-fit: cover;
 }
@@ -182,21 +204,21 @@ main {
 	background-color: rgba(240, 240, 240, 75%);
 	margin:auto;
 	margin-bottom:-6em;
-	padding: 2em;
-	padding-top:2em;
-	padding-left:15em;
+	padding: 2em 10em 2em 30em;
 	border-radius: 1rem
 }
 main h2 {
-	width:100%;
+	/*width:100%;*/
 	margin: 0;
 	padding:1.5rem;
-	border-bottom: 1px solid rgba(51, 51, 51, 45%);
-	border-left:1px solid rgba(51, 51, 51, 45%);
-	border-radius: 6px 3rem 6px 6px;
+	border-bottom: 3px solid rgba(51, 51, 51, 45%);
+	border-left: 1px solid rgba(51, 51, 51, 45%);
+	border-top: 1px solid #eee;
+	border-right: 1px solid #eee;
+	border-radius: 6px 3rem 6px 3rem;
 	
 	font-weight:bolder;
-	font-size:6rem;
+	font-size:4.5rem;
 	text-align: center;
 	color:rgb(240 240 240);
 	background-color:rgb(42 166 62);
@@ -206,33 +228,107 @@ main h2 {
 main section {
 	width:100%;
 	margin:2em auto;
+}
+
+/* navegacion (ASIDE) ****************************/
+aside {
+	padding:1em;
+	padding-left:3em;
+	background-color: rgb(255 255 255 / 87%);
+	border-bottom:1px solid #333;
+	border-radius: 6px 2rem 6px 2rem;
+	margin: 2em auto;
+	margin-top:auto;
+	/*margin-top:-6em;
+	margin-left: -20em;*/
+	width: 100%;
+	max-width:1200px;
+	columns: 6;
+	border-bottom:3px solid #999;
+}
+aside h3 {
+	font-size:3em;
+	font-weight:900;
+}
+aside h3,
+aside ul li {
+	text-shadow: 1px -2px 0 white/*, 2px -2px 0 white*/;	
+}
+aside ul {
+	font-size: 1.2em;
+}
+aside ul li {
+	background-image:url("../img/paw-print.png");
+	background-repeat: no-repeat;
+	padding-left: 1.8em;
+}
+aside ul li a:hover {
+	font-style: underline
+}
+
+/* publicaciones ********************************/
+main section#publicaciones {
 	display:flex;
 	flex-wrap: wrap;
-	align-items:flex-start;
+	align-items:stretch;
 	align-content:flex-start;
 	justify-content: space-evenly;
 	gap: 1em
 }
-
-main section article {
-	min-width:300px;
-	max-width:30%;
-	background-color:rgb(240 240 240);
+main section#publicaciones article {
+	min-width:240px;
+	width:30%;
+	flex-grow:1;
+	background-color:#eee;
 	padding: 1.5em;
 	border-radius: 6px 2.4rem 6px 2.4rem;
 }
-
-/* publicaciones ********************************/
-main section#publicaciones article p.post {
+main section#publicaciones article h3 {
+	text-shadow: 1px -2px 0 white/*, 2px -2px 0 white*/;	
+}
+main section#publicaciones article p {
+	margin-bottom:1em
+}
+main section#publicaciones section.post_info {
+	padding:0.5em;
+	background-color:white;
+	border-bottom:1px solid #ccc;
+	border-radius: 3px;
+	columns:3;
+}
+main section#publicaciones article p.autor,
+main section#publicaciones article p.fecha,
+main section#publicaciones article p.etiquetas {
 	font-size: 1.2em;
-	margin:1.2em auto
+	margin:auto;
+	padding-left:1.8em;
+	background-repeat: no-repeat;
+}
+main section#publicaciones article p.autor {
+	background-image:url("../img/pencil-line-16.png");
+}
+main section#publicaciones article p.fecha {
+	background-image:url("../img/calendar-days.png");
+}
+main section#publicaciones article p.etiquetas {
+	background-image:url("../img/paw-print.png");
 }
 
 /* tarjetas *************************************/
+main section#tarjetas {
+	max-width:100%;
+	display:grid;
+	grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+	gap:1em;
+	line-height:1.5em;
+}
 main section#tarjetas article {
-	min-width:150px;
-	max-width:270px;
+	display:block;
+	width:100%;
+	height:max-content;
+	padding:1em;
 	background-color:rgba(42, 166, 62, 100%);
+	border-radius: 6px 2.4rem 6px 2.4rem;
 }
 main section#tarjetas article * {
 	color:rgb(240 240 240);
@@ -240,18 +336,15 @@ main section#tarjetas article * {
 		/*1px 1px 0 rgba(42, 166, 62, 84%);*/
 }
 main section#tarjetas img {
+	border: 1px solid rgb(50 50 50 / 30%);
 	border-radius:3px 2rem 0 0;
 }
 main section#tajetas article h3 {
-	line-height:1em;
 	width:100%;
-	margin:0 auto;
-	margin-bottom: 10em;
 }
 main section#tarjetas p {
 	background-color:rgb(51 51 51 / 30%);
 	margin:0 auto;
-	line-height:1.5em;
 	padding:0.6em;
 }
 main section#tarjetas p:last-of-type {

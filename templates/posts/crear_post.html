@@ -1,18 +1,15 @@
-{% extends 'base.html' %} <!--nota del codigo: SE EXTIENDE EL BLOQUE PARA SEGUIR-->
+{% extends 'base.html' %}
 
 {% block contenido %}
-
-	<h1>Crear Publicacion</h1>
-
-	<form method="POST" enctype="multipart/form-date"> {% csrf_token %}
-		{{form.as_p}}
-		<button type="sumbit">Crear</button>
-		<a href="{% url 'posts:path_listar_posts' %}">Cancelar</a>
-		
-	</form>
-		
-	
-	
-
-
+	<main>		
+		<h2>Crear publicación</h2>
+		<section id="publicaciones">
+			<form method="post" enctype="multipart/form-data">{% csrf_token %}
+				<p>¿Está seguro que desea eliminar la publicación?</p>
+				{{ form.as_p }}
+				<input type="submit" value="CONFIRMAR">
+				<a href="{% url 'posts:path_listar_posts' %}"> Cancelar</a>
+			</form>
+		</section>
+	</main>
 {% endblock contenido %}
