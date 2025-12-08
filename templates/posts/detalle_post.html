@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+	<section id="hero">
+		<img src="{{ tarjetas_fauna.imagen.url }}" />
+		<section>
+			<h2>{{ tarjetas_fauna.nombre }}</h2>
+			<p>{{ tarjetas_fauna.descripcion }}</p>
+			<p>{{ tarjetas_fauna.categoria }}</p>
+		</section>
+	</section>
+{% endblock contenido %}

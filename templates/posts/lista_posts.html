@@ -1,6 +1,20 @@
 {% extends 'base.html' %}
 
 {% block contenido %}
+	<aside>
+		<h3>Categorias</h3>
+		<ul>
+			<li>
+				<a href="{% url 'posts:path_listar_posts'%}">Todos</a>
+			</li>
+			{% for c in categorias %}
+				<li>
+					<a href="{% url 'posts:path_filtrados_categoria_post' c.pk %}"> {{ c.sobre }} </a>
+				</li>
+			{% endfor %}
+		</ul>
+	</aside>	
+
 	<main>		
 		<h2>Últimas publicaciones</h2>
 		<a href="{% url 'posts:path_crear_post' %}"> Crear Publicación</a>

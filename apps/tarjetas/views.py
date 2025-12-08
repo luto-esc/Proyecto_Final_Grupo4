@@ -2,20 +2,31 @@ from django.shortcuts import render
 
 # Create your views here.
 from .models import Tarjeta_Fauna, Tarjeta_Flora
+from apps.categorias.models import Categoria_Fauna, Categoria_Flora
 from .forms import FormularioCrearActualizarTarjetaFauna, FormularioCrearActualizarTarjetaFlora
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
 #------------------LISTAR-------------------
-class Listar_Tarjetas_Fauna(ListView):
-	model = Tarjeta_Fauna
-	template_name = 'tarjetas/lista_tarjetas_fauna.html'
-	context_object_name = 'tarjetas_fauna'
+def Listar_Tarjetas_Fauna_Fun(request):
+	todas_tarjetas = Tarjeta_Fauna.objects.all()
+	context = {}
+	context['tarjetas'] = todas_tarjetas
 
-class Listar_Tarjetas_Flora(ListView):
-	model = Tarjeta_Flora
-	template_name = 'tarjetas/lista_tarjetas_flora.html'
-	context_object_name = 'tarjetas_flora'
+	categorias = Categoria_Fauna.objects.all()
+	context['categorias'] = categorias
+	
+	return render(request,'tarjetas/lista_tarjetas_fauna.html', context)
+
+def Listar_Tarjetas_Flora_Fun(request):
+	todas_tarjetas = Tarjeta_Flora.objects.all()
+	context = {}
+	context['tarjetas'] = todas_tarjetas
+
+	categorias = Categoria_Flora.objects.all()
+	context['categorias'] = categorias
+	
+	return render(request,'tarjetas/lista_tarjetas_flora.html', context)
 
 #------------------DETALLE-------------------
 
@@ -66,3 +77,34 @@ class Eliminar_Tarjeta_Flora(DeleteView):
 	model = Tarjeta_Flora
 	template_name = 'tarjetas/eliminar_tarjeta_flora.html'
 	success_url = reverse_lazy('tarjetas:path_listar_tarjetas_flora')
+
+#------------------FILTRO-------------------
+def Filtro_Categoria_Fauna(request,pk):
+	c = Categoria_Fauna.objects.get(pk = pk)
+
+	t = Tarjeta_Fauna.objects.filter(categoria = c)	
+	
+	context = {}
+	
+	context['tarjetas'] = t
+	
+	categorias = Categoria_Fauna.objects.all()
+	
+	context['categorias'] = categorias
+	
+	return render(request,'tarjetas/lista_tarjetas_fauna.html', context)
+
+def Filtro_Categoria_Flora(request,pk):
+	c = Categoria_Flora.objects.get(pk = pk)
+
+	t = Tarjeta_Flora.objects.filter(categoria = c)	
+	
+	context = {}
+	
+	context['tarjetas'] = t
+	
+	categorias = Categoria_Flora.objects.all()
+	
+	context['categorias'] = categorias
+	
+	return render(request,'tarjetas/lista_tarjetas_flora.html', context)

@@ -24,16 +24,6 @@
 		<button>Acceder</button>
 	</header>
 	
-	<aside>
-		<h3>Publicaciones</h3>
-		<ul>
-			{% for c in categorias %}
-				<li>
-					<a href="{% url 'posts:path_filtrados_categoria_post' c.pk %}"> {{ c.sobre }} </a>
-				</li>
-			{% endfor %}
-		</ul>
-	</aside>
 		
     {% block contenido %}
 

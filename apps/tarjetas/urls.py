@@ -5,8 +5,8 @@ app_name = 'tarjetas'
 
 urlpatterns = [
     
-    path('listar_tarjetas_fauna/', views.Listar_Tarjetas_Fauna.as_view(), name = 'path_listar_tarjetas_fauna'),
-    path('listar_tarjetas_flora/', views.Listar_Tarjetas_Flora.as_view(), name = 'path_listar_tarjetas_flora'),
+    path('listar_tarjetas_fauna/', views.Listar_Tarjetas_Fauna_Fun, name = 'path_listar_tarjetas_fauna'),
+    path('listar_tarjetas_flora/', views.Listar_Tarjetas_Flora_Fun, name = 'path_listar_tarjetas_flora'),
 
     path('detalle_fauna/<int:pk>', views.Detalle_Tarjetas_Fauna.as_view(), name = 'path_detalle_tarjeta_fauna'),
     path('detalle_flora/<int:pk>', views.Detalle_Tarjetas_Flora.as_view(), name = 'path_detalle_tarjeta_flora'),
@@ -18,5 +18,8 @@ urlpatterns = [
     path('actualizar_tarjeta_flora/<int:pk>', views.Actualizar_Tarjeta_Flora.as_view(), name = 'path_actualizar_tarjeta_flora'),
 
     path('eliminar_tarjeta_flora/<int:pk>', views.Eliminar_Tarjeta_Flora.as_view(), name = 'path_eliminar_tarjeta_flora'),
-    path('eliminar_tarjeta_fauna/<int:pk>', views.Eliminar_Tarjeta_Fauna.as_view(), name = 'path_eliminar_tarjeta_fauna'),    
+    path('eliminar_tarjeta_fauna/<int:pk>', views.Eliminar_Tarjeta_Fauna.as_view(), name = 'path_eliminar_tarjeta_fauna'),
+
+    path('filtro_categoria_fauna/<int:pk>', views.Filtro_Categoria_Fauna, name = 'path_filtrados_categoria_fauna'),
+    path('filtro_categoria_flora/<int:pk>', views.Filtro_Categoria_Flora, name = 'path_filtrados_categoria_flora'),    
 ]

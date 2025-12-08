@@ -1,12 +1,26 @@
 {% extends 'base.html' %}
 
 {% block contenido %}
+	<aside>
+		<h3>Categorias</h3>
+		<ul>
+			<li>
+				<a href="{% url 'tarjetas:path_listar_tarjetas_fauna'%}">Todos</a>
+			</li>
+			{% for c in categorias %}
+				<li>
+					<a href="{% url 'tarjetas:path_filtrados_categoria_fauna' c.pk %}"> {{ c.nombre }} </a>
+				</li>
+			{% endfor %}
+		</ul>
+	</aside>	
+
 	<main>
-		<h2>Publicaciones sobre flora</h2>
+		<h2>Publicaciones sobre fauna</h2>
 		<a href=" {% url 'tarjetas:path_crear_tarjeta_fauna' %}">Crear tarjeta fauna</a>
 		
 		<section id="tarjetas">
-		{% for t in tarjetas_fauna %}
+		{% for t in tarjetas %}
 			<article>
 				<h3>{{t.nombre}}</h3>
 				<img src="{{ t.imagen.url }}">
