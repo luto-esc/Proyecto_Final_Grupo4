@@ -13,6 +13,17 @@ class Listar_Posts(ListView):
 	template_name = 'posts/lista_posts.html'
 	context_object_name = 'posts'
 
+def Listar_Posts_Fun(request):
+	todos_posts = Post.objects.all()
+	context = {}
+	context['posts'] = todos_posts
+
+	categorias = Categoria_Sobre.objects.all()
+	context['categorias'] = categorias
+	
+	return render(request,'posts/lista_posts.html', context)
+
+
 
 class Crear_Post(CreateView):
 	model = Post
@@ -34,7 +45,7 @@ class Eliminar_Post(DeleteView):
 def Filtro_Post(request,pk):
 	c = Categoria_Sobre.objects.get(pk = pk)
 
-	p = Post.objects.filter(categorias = c)
+	p = Post.objects.filter(categoria_sobre = c)	
 	
 	context = {}
 	

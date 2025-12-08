@@ -5,8 +5,8 @@
 	<title>chacoverde</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<!-- <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}" /> -->
-	<!-- <link rel="stylesheet" type="text/css" href="{% static 'css/main1.css' %}" /> -->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}" /> -->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main1.css' %}" /> -->
 </head>
 
 <body>
@@ -28,19 +28,10 @@
 		<h3>Publicaciones</h3>
 		<ul>
 			{% for c in categorias %}
-			<li>
-				<a href="{% url 'posts:path_filtrados_categoria_post' c.pk %}"> {{ c.sobre }} </a>
-			</li>
+				<li>
+					<a href="{% url 'posts:path_filtrados_categoria_post' c.pk %}"> {{ c.sobre }} </a>
+				</li>
 			{% endfor %}
-			<li><a href="#">Mamíferos</a></li>
-			<li><a href="#">Anfibios</a></li>
-			<li><a href="#">Aves</a></li>
-			<li><a href="#">Reptiles</a></li>
-			<li><a href="#">Peces</a></li>
-			<li><a href="#">Bosque seco</a></li>
-			<li><a href="#">Bosque de ribera</a></li>
-			<li><a href="#">Río</a></li>
-			<li><a href="#">Humedal</a></li>
 		</ul>
 	</aside>
 		
