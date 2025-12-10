@@ -3,15 +3,11 @@ from django.shortcuts import render
 # Create your views here.
 
 from .models import Post
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from .forms import FormularioCrearPost, FormularioActualizarPost
 from apps.categorias.models import Categoria_Sobre
 
-class Listar_Posts(ListView):
-	model = Post
-	template_name = 'posts/lista_posts.html'
-	context_object_name = 'posts'
 
 def Listar_Posts_Fun(request):
 	todos_posts = Post.objects.all()
@@ -22,8 +18,6 @@ def Listar_Posts_Fun(request):
 	context['categorias'] = categorias
 	
 	return render(request,'posts/lista_posts.html', context)
-
-
 
 class Crear_Post(CreateView):
 	model = Post

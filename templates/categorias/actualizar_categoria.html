@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+	<main>
+	<h2>Actualizar Categoria</h2>
+		<section id="publicaciones">
+			<form method="POST" enctype="multipart/form-date"> {% csrf_token %}
+			{{form.as_p}}
+			<button type="sumbit">Crear</button>
+			<a href="{% url 'Categoria:path_listar_categoria' t.pk %}">Cancelar</a>	
+		</section>
+	</main>
+{% endblock contenido %}

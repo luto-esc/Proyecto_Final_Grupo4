@@ -1,14 +1,8 @@
 from django import forms
-from .models import Tarjeta_Fauna, Tarjeta_Flora
+from .models import Tarjeta
 
-class FormularioCrearActualizarTarjetaFauna(forms.ModelForm):
-
-	class Meta:
-		model = Tarjeta_Fauna
-		fields = ['nombre', 'descripcion', 'imagen', 'categoria']
-
-class FormularioCrearActualizarTarjetaFlora(forms.ModelForm):
+class FormularioCrearActualizarTarjeta(forms.ModelForm):
 
 	class Meta:
-		model = Tarjeta_Flora
-		fields = ['nombre', 'descripcion', 'imagen', 'categoria']
+		model = Tarjeta
+		fields = ['nombre', 'descripcion', 'imagen', 'categoria_sobre']

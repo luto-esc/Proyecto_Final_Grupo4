@@ -2,28 +2,16 @@ from django.db import models
 
 # Create your models here.
 
-from apps.categorias.models import Categoria_Fauna, Categoria_Flora
+from apps.categorias.models import Categoria_Sobre
 
 
 
-class Tarjeta_Flora(models.Model):
-
-	nombre = models.CharField(max_length = 100)
-	descripcion = models.TextField(default="Sin descripción")
-	imagen = models.ImageField(upload_to = 'tarjetas_flora_fotos')
-	categoria = models.ManyToManyField(Categoria_Flora)
-
-	def __str__(self):
-		return self.nombre
-
-
-
-class Tarjeta_Fauna(models.Model):
+class Tarjeta(models.Model):
 
 	nombre = models.CharField(max_length = 100)
 	descripcion = models.TextField(default="Sin descripción")
-	imagen = models.ImageField(upload_to = 'tarjetas_fauna_fotos')
-	categoria = models.ManyToManyField(Categoria_Fauna)
+	imagen = models.ImageField(upload_to = 'tarjetas_fotos')
+	categoria_sobre = models.ManyToManyField(Categoria_Sobre)
 
 	def __str__(self):
 		return self.nombre

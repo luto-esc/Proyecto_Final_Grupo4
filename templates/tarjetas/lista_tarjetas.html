@@ -5,11 +5,11 @@
 		<h3>Categorias</h3>
 		<ul>
 			<li>
-				<a href="{% url 'tarjetas:path_listar_tarjetas_fauna'%}">Todos</a>
+				<a href="{% url 'tarjetas:path_listar_tarjetas'%}">Todos</a>
 			</li>
 			{% for c in categorias %}
 				<li>
-					<a href="{% url 'tarjetas:path_filtrados_categoria_fauna' c.pk %}"> {{ c.nombre }} </a>
+					<a href="{% url 'tarjetas:path_filtrados_categoria' c.pk %}"> {{ c.sobre }} </a>
 				</li>
 			{% endfor %}
 		</ul>
@@ -17,7 +17,7 @@
 
 	<main>
 		<h2>Publicaciones sobre fauna</h2>
-		<a href=" {% url 'tarjetas:path_crear_tarjeta_fauna' %}">Crear tarjeta fauna</a>
+		<a href=" {% url 'tarjetas:path_crear_tarjeta' %}">Crear tarjeta fauna</a>
 		
 		<section id="tarjetas">
 		{% for t in tarjetas %}
@@ -25,8 +25,8 @@
 				<h3>{{t.nombre}}</h3>
 				<img src="{{ t.imagen.url }}">
 				<p>{{t.descripcion}}</p>
-				<a href="{% url 'tarjetas:path_detalle_tarjeta_fauna' t.pk %}">Ver detalle</a>
-				<a href="{% url 'tarjetas:path_eliminar_tarjeta_fauna' t.pk %}">Eliminar</a>
+				<a href="{% url 'tarjetas:path_detalle_tarjeta' t.pk %}">Ver detalle</a>
+				<a href="{% url 'tarjetas:path_eliminar_tarjeta' t.pk %}">Eliminar</a>
 			</article>
 		{% endfor %}
 		</section>

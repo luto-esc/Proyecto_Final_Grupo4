@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+	<section id="hero">
+		<img src="{{ categoria.imagen.url }}" />
+		<section>
+			<h2>{{ categoria.sobre }}</h2>
+			<p>{{ categoria.descripcion }}</p>
+		</section>
+	</section>
+
+	<main>		
+		<h2>Publicaciones</h2>
+		<a href="{% url 'posts:path_crear_post' %}"> Crear Publicación</a>
+		<section id="publicaciones">
+			{% for p in posts %}
+				<article>
+					<h3>{{p.titulo}}</h3>
+					<section class="post_info">
+						<!--<p class="autor">Por Lucho T</p>-->
+						<p class="fecha">{{p.fecha}}</p>
+						<p class="etiquetas">{{p.categoria_sobre}}</p>
+					</section>
+					<img src="{{ p.imagen.url }}">
+					<a href="{% url 'posts:path_actualizar_post' p.pk %}">Actualizar Publicación</a>
+					<a href="{% url 'posts:path_eliminar_post' p.pk %}"> Eliminar Publicación</a>
+				</article>
+			{% endfor %}
+		</section>
+
+		<h2>Tarjetas</h2>
+		<a href=" {% url 'tarjetas:path_crear_tarjeta' %}">Crear tarjeta fauna</a>
+		<section id="tarjetas">
+		{% for t in tarjetas %}
+			<article>
+				<h3>{{t.nombre}}</h3>
+				<a href="{% url 'tarjetas:path_detalle_tarjeta' t.pk %}">
+					<img src="{{ t.imagen.url }}">
+				</a>
+				<p>{{t.descripcion}}</p>
+				<a href="{% url 'tarjetas:path_eliminar_tarjeta' t.pk %}">Eliminar</a>
+			</article>
+		{% endfor %}
+		</section>
+	</main>
+
+
+
+	<aside>
+		<h3>Categorias</h3>
+		<ul>
+			<li>
+				<a href="{% url 'tarjetas:path_listar_tarjetas'%}">Todos</a>
+			</li>
+			{% for c in categorias %}
+				<li>
+					<a href="{% url 'tarjetas:path_filtrados_categoria' c.pk %}"> {{ c.sobre }} </a>
+				</li>
+			{% endfor %}
+		</ul>
+	</aside>	
+
+	<main>
+		<h2>Publicaciones sobre fauna</h2>
+		<a href=" {% url 'tarjetas:path_crear_tarjeta' %}">Crear tarjeta fauna</a>
+		
+		<section id="tarjetas">
+		{% for t in tarjetas %}
+			<article>
+				<h3>{{t.nombre}}</h3>
+				<img src="{{ t.imagen.url }}">
+				<p>{{t.descripcion}}</p>
+				<a href="{% url 'tarjetas:path_detalle_tarjeta' t.pk %}">Ver detalle</a>
+				<a href="{% url 'tarjetas:path_eliminar_tarjeta' t.pk %}">Eliminar</a>
+			</article>
+		{% endfor %}
+		</section>
+	</main>
+{% endblock contenido %}

@@ -9,143 +9,28 @@
 			<h2>¿Sabías que el Gran Chaco es una de las ecorregiones de bosque seco más grandes y diversas del mundo?</h2>
 			<p>Porque no todo es aridez y sequía: montes, sierras, sabanas, esteros y lagunas, forman también parte de su geografía.</p>
 			<p>Ocupando el centro norte de nuestro país, y el oeste de nuestra provincia, con su característico apodo, "El Impenetrable", es un tesoro natural cuyas maravillas aún hoy muchos ignoran.</p>
-			<p>Porque no todo es aridez y sequía: montes, sierras, sabanas, esteros y lagunas, forman también parte de su geografía.</p>
-			<p>Ocupando el centro norte de nuestro país, y el oeste de nuestra provincia, con su característico apodo, "El Impenetrable", es un tesoro natural cuyas maravillas aún hoy muchos ignoran.</p>
 		</section>
 	</section>
 
 	<main>		
 		<h2>Últimas publicaciones</h2>
+		<a href="{% url 'posts:path_crear_post' %}"> Crear Publicación</a>
 		<section id="publicaciones">
-			<article>
-				<h3>El Gran Chaco y el misterio del impenetrable</h3>
-				<section class="post_info">
-					<p class="autor">Por Lucho T</p>
-					<p class="fecha">1/2/2025</p>
-					<p class="etiquetas">#animales, #mamíferos, #peces</p>
-				</section>
-				<p>Aprovechando esta primera etapa del <a href="https://informatorio.chaco.gob.ar">Informatorio</a> presentamos este pequeño proyecto de desarrollo web con una paginita de muestra cuyo objetivo es poner en práctica los conceptos vistos con los profes.</p>
-				<p>Los recursos utilizados son HTML y CSS, y el producto es una página web estática, que busca ser tanto simple como elegante, semántica y responsiva, y también servir como punto de partida para algún futuro proyecto.</p>
-				<p>La <code>navbar</code> está más que nada de adorno porque en una página como esta no tiene mucho sentido saltar entre los contenidos sin leer los anteriores, pero es un recurso bastante típico que casi siempre debe estar incluído.</p>
-			</article>
-
-			<article>
-				<h3>El último yaguareté</h3>
-				<section class="post_info">
-					<p class="autor">Por Lucho T</p>
-					<p class="fecha">1/2/2025</p>
-					<p class="etiquetas">#animales, #mamíferos, #peces</p>
-				</section>
-				<p>Lo dicho: conseguir un diseño web responsivo, escrito con código limpio, semántico y ordenado, que sea igualmente estético, simple y funcional.</p>
-				<ul>
-					<li><em>Simple:</em> en esta etapa tratamos de no complicarnos mucho, con los recursos básicos tenemos más que suficiente para ofrecer un producto suficientemente logrado.</li>
-					<li><em>Elegante:</em> intentamos al mismo tiempo no descuidar la estética, probablemente una de las características más valiosas e impactantes de toda página web.</li>
-					<li><em>Semántica:</em> la utilización de código semántico permite que sea legible no solo para las personas que deseen revisarlo, sino también para los robots de internet, y también facilita la accesibilidad del contenido de la página para personas con requerimientos particulares.</li>
-					<li><em>Responsiva:</em> otro de los focos está puesto en la responsividad del diseño, es decir que se pueda acceder igualmente al contenido en una PC como en dispositivos móviles.</li>
-				</ul>
-			</article>
-
-			<article>
-				<h3>La trágica historia del árbol centenario</h3>
-				<section class="post_info">
-					<p class="autor">Por Lucho T</p>
-					<p class="fecha">1/2/2025</p>
-					<p class="etiquetas">#animales, #mamíferos, #peces</p>
-				</section>
-				<p>A continuación vamos a presentar algunas de las estrategias que nos gusta usar para lograr los objetivos que buscamos, sea por las buenas o por las malas, en la miseria y en la enfermedad, cueste lo que cueste, y más vale tarde que nunca.</p>
-				<ol>
-					<li>Empezamos por escribir la estructura y contenido de la página en formato HTML, para tener un pantallazo de los elementos con los que contamos.</li>
-					<li>Elaboramos un diagrama rudimentario, a mano en un papel, o en este caso "de memoria", de la manera en que queremos presentar visualmente las distintas cajas con el contenido de la página.</li>
-					<li>El <em>header</em> arriba de todo busca generar impacto visual. A lo mejor le agreguemos una imagen, o solo juguemos con los colores, tamaños de fuente, espacios libres, etc.</li>
-					<li>Luego presentamos el contenido. Acá las cosas ya se complican un poco, porque es donde empieza a trabajar la parte "responsiva". Las distintas cajas con el contenido pueden aparecer "apiladas" en forma horizontal en resoluciones mayores como la de una PC, y luego desacoplarse en resoluciones más pequeñas como las de un teléfono celular, con el fin de facilitar la legibilidad.</li>
-					<li>Finalmente, antes de pasar a los estilos, la parte más divertida, elaboramos un muy básico footer, con la información de contacto, redes y eso.</li>
-				</ol>
-			</article>
-		<article>
-				<h3>El Gran Chaco y el misterio del impenetrable</h3>
-				<section class="post_info">
-					<p class="autor">Por Lucho T</p>
-					<p class="fecha">1/2/2025</p>
-					<p class="etiquetas">#animales, #mamíferos, #peces</p>
-				</section>
-				<p>Aprovechando esta primera etapa del <a href="https://informatorio.chaco.gob.ar">Informatorio</a> presentamos este pequeño proyecto de desarrollo web con una paginita de muestra cuyo objetivo es poner en práctica los conceptos vistos con los profes.</p>
-				<p>Los recursos utilizados son HTML y CSS, y el producto es una página web estática, que busca ser tanto simple como elegante, semántica y responsiva, y también servir como punto de partida para algún futuro proyecto.</p>
-				<p>La <code>navbar</code> está más que nada de adorno porque en una página como esta no tiene mucho sentido saltar entre los contenidos sin leer los anteriores, pero es un recurso bastante típico que casi siempre debe estar incluído.</p>
-			</article>
-
-			<article>
-				<h3>El último yaguareté</h3>
-				<section class="post_info">
-					<p class="autor">Por Lucho T</p>
-					<p class="fecha">1/2/2025</p>
-					<p class="etiquetas">#animales, #mamíferos, #peces</p>
-				</section>
-				<p>Lo dicho: conseguir un diseño web responsivo, escrito con código limpio, semántico y ordenado, que sea igualmente estético, simple y funcional.</p>
-				<ul>
-					<li><em>Simple:</em> en esta etapa tratamos de no complicarnos mucho, con los recursos básicos tenemos más que suficiente para ofrecer un producto suficientemente logrado.</li>
-					<li><em>Elegante:</em> intentamos al mismo tiempo no descuidar la estética, probablemente una de las características más valiosas e impactantes de toda página web.</li>
-					<li><em>Semántica:</em> la utilización de código semántico permite que sea legible no solo para las personas que deseen revisarlo, sino también para los robots de internet, y también facilita la accesibilidad del contenido de la página para personas con requerimientos particulares.</li>
-					<li><em>Responsiva:</em> otro de los focos está puesto en la responsividad del diseño, es decir que se pueda acceder igualmente al contenido en una PC como en dispositivos móviles.</li>
-				</ul>
-			</article>
-		</section>
-		
-		<section id="tarjetas">
-			<article>
-				<h3>Yacaré</h3>
-				<img src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Jaguar_(Panthera_onca_palustris)_male_Rio_Negro_2.JPG" />
-				<p>Porque no todo es aridez y sequía: montes, sierras, sabanas, esteros y lagunas, forman también parte de su geografía.</p>
-				<p>Ocupando el centro norte de nuestro país, y el oeste de nuestra provincia, con su característico apodo, "El Impenetrable", es un tesoro natural cuyas maravillas aún hoy muchos ignoran.</p>
-			</article>
-			
-			<article>
-				<h3>Yaguareté</h3>
-				<img src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Jaguar_(Panthera_onca_palustris)_male_Rio_Negro_2.JPG" />
-				<p>Porque no todo es aridez y sequía: montes, sierras, sabanas, esteros y lagunas, forman también parte de su geografía.</p>
-				<p>Ocupando el centro norte de nuestro país, y el oeste de nuestra provincia, con su característico apodo, "El Impenetrable", es un tesoro natural cuyas maravillas aún hoy muchos ignoran.</p>
-			</article>
-			
-			<article>
-				<h3>Tatú carreta</h3>
-				<img src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Jaguar_(Panthera_onca_palustris)_male_Rio_Negro_2.JPG" />
-				<p>Porque no todo es aridez y sequía: montes, sierras, sabanas, esteros y lagunas, forman también parte de su geografía.</p>
-				<p>Ocupando el centro norte de nuestro país, y el oeste de nuestra provincia, con su característico apodo, "El Impenetrable", es un tesoro natural cuyas maravillas aún hoy muchos ignoran.</p>
-			</article>
-			
-			<article>
-				<h3>Bosque de ribera</h3>
-				<img src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Jaguar_(Panthera_onca_palustris)_male_Rio_Negro_2.JPG" />
-				<p>Porque no todo es aridez y sequía: montes, sierras, sabanas, esteros y lagunas, forman también parte de su geografía.</p>
-				<p>Ocupando el centro norte de nuestro país, y el oeste de nuestra provincia, con su característico apodo, "El Impenetrable", es un tesoro natural cuyas maravillas aún hoy muchos ignoran.</p>
-			</article>
-			
-						<article>
-				<h3>Yacaré</h3>
-				<img src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Jaguar_(Panthera_onca_palustris)_male_Rio_Negro_2.JPG" />
-				<p>Porque no todo es aridez y sequía: montes, sierras, sabanas, esteros y lagunas, forman también parte de su geografía.</p>
-				<p>Ocupando el centro norte de nuestro país, y el oeste de nuestra provincia, con su característico apodo, "El Impenetrable", es un tesoro natural cuyas maravillas aún hoy muchos ignoran.</p>
-			</article>
-			
-			<article>
-				<h3>Yaguareté</h3>
-				<img src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Jaguar_(Panthera_onca_palustris)_male_Rio_Negro_2.JPG" />
-				<p>Porque no todo es aridez y sequía: montes, sierras, sabanas, esteros y lagunas, forman también parte de su geografía.</p>
-				<p>Ocupando el centro norte de nuestro país, y el oeste de nuestra provincia, con su característico apodo, "El Impenetrable", es un tesoro natural cuyas maravillas aún hoy muchos ignoran.</p>
-			</article>
-			
-			<article>
-				<h3>Tatú carreta</h3>
-				<img src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Jaguar_(Panthera_onca_palustris)_male_Rio_Negro_2.JPG" />
-				<p>Porque no todo es aridez y sequía: montes, sierras, sabanas, esteros y lagunas, forman también parte de su geografía.</p>
-				<p>Ocupando el centro norte de nuestro país, y el oeste de nuestra provincia, con su característico apodo, "El Impenetrable", es un tesoro natural cuyas maravillas aún hoy muchos ignoran.</p>
-			</article>
-			
-			<article>
-				<h3>Tatú carreta</h3>
-				<img src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Jaguar_(Panthera_onca_palustris)_male_Rio_Negro_2.JPG" />
-				<p>Porque no todo es aridez y sequía: montes, sierras, sabanas, esteros y lagunas, forman también parte de su geografía.</p>
-				<p>Ocupando el centro norte de nuestro país, y el oeste de nuestra provincia, con su característico apodo, "El Impenetrable", es un tesoro natural cuyas maravillas aún hoy muchos ignoran.</p>
-			</article>
+			{% for p in posts %}
+				<article>
+					<h3>{{p.titulo}}</h3>
+					<section class="post_info">
+						<!--<p class="autor">Por Lucho T</p>-->
+						<p class="fecha">{{p.fecha}}</p>
+						<p class="etiquetas">{{p.categoria_sobre}}</p>
+					</section>
+					<img src="{{ p.imagen.url }}">
+					<p>{{p.cuerpo}}</p>
+					<a href="{% url 'posts:path_actualizar_post' p.pk %}">Actualizar Publicación</a>
+					<a href="{% url 'posts:path_eliminar_post' p.pk %}"> Eliminar Publicación</a>
+				</article>
+			{% endfor %}
 		</section>
 	</main>
+
 {% endblock contenido %}

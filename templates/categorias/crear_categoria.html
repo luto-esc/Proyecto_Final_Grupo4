@@ -2,12 +2,12 @@
 
 {% block contenido %}
 	<main>
-	<h2>Crear tarjeta de flora</h2>
+	<h2>Crear categoria</h2>
 		<section id="publicaciones">
 			<form method="POST" enctype="multipart/form-date"> {% csrf_token %}
 			{{form.as_p}}
 			<button type="sumbit">Crear</button>
-			<a href="{% url 'tarjetas:path_listar_tarjetas_flora' %}">Cancelar</a>
+			<a href="{% url 'tarjetas:path_listar_categorias' %}">Cancelar</a>
 		</section>
 	</main>
 {% endblock contenido %}

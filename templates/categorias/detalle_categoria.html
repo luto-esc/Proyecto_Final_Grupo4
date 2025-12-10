@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+	<section id="hero">
+		<img src="{{ categorias.imagen.url }}" />
+		<section>
+			<h2>{{ categorias.nombre }}</h2>
+			<p>{{ categorias.descripcion }}</p>
+			<p>{{ categorias.categoria }}</p>
+		</section>
+	</section>
+
+{% endblock contenido %}

@@ -5,40 +5,16 @@ from django.db import models
 
 
 
-#///////////// CATEGORIA POST /////////////////////////
+#///////////// CATEGORIA/ETIQUETAS /////////////////////////
 
 class Categoria_Sobre(models.Model):
 
 	sobre = models.CharField(max_length = 100)
+	imagen = models.ImageField(upload_to = 'categorias_foto')
 	descripcion = models.TextField(default="Sin descripción")
 	
 	def __str__(self):
 		return self.sobre
 
-#///////////// CATEGORIA POST /////////////////////////
-
-
-
-#///////////// CATEGORIAS DE FAUNA /////////////////////////
-class Categoria_Fauna(models.Model):
-	
-	nombre = models.CharField(max_length = 100)
-	descripcion = models.TextField(default="Sin descripción")
-
-	def __str__(self):
-		return self.nombre
-
-#///////////// CATEGORIAS DE FAUNA /////////////////////////
-
-
-#///////////// CATEGORIAS DE FLORA /////////////////////////
-class Categoria_Flora(models.Model):
-	
-	nombre = models.CharField(max_length = 100)
-	descripcion = models.TextField(default="Sin descripción")
-
-	def __str__(self):
-		return self.nombre
-
-#///////////// CATEGORIAS DE FLORA /////////////////////////
+#///////////// CATEGORIA/ETIQUETAS /////////////////////////
 

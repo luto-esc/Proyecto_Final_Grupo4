@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<main>
+		<h2>Categoria</h2>
+		<a href=" {% url 'categorias:path_crear_categoria' %}">Crear categoria</a>
+		
+		<section id="tarjetas">
+		{% for c in categorias %}
+			<article>
+				<a href="{% url 'categorias:path_filtrado_categoria_todo' c.pk %}">
+					<h3>{{c.sobre}}</h3>
+				</a>
+				<a href="{% url 'categorias:path_detalle_categoria' c.pk %}">Ver detalle</a>
+				<a href="{% url 'categorias:path_eliminar_categoria' c.pk %}">Eliminar</a>
+			</article>
+		{% endfor %}
+		</section>
+	</main>
+{% endblock contenido %}
