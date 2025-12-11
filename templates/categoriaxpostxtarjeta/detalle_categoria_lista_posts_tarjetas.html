@@ -10,6 +10,8 @@
 		</section>
 	</section>
 
+	<a href="{% url 'tarjetas:path_listar_tarjetas' %}"> Solo tarjetas</a>
+
 	<main>		
 		<h2>Publicaciones</h2>
 		<a href="{% url 'posts:path_crear_post' %}"> Crear Publicación</a>
@@ -30,7 +32,7 @@
 		</section>
 
 		<h2>Tarjetas</h2>
-		<a href=" {% url 'tarjetas:path_crear_tarjeta' %}">Crear tarjeta fauna</a>
+		<a href=" {% url 'tarjetas:path_crear_tarjeta' %}">Crear tarjeta</a>
 		<section id="tarjetas">
 		{% for t in tarjetas %}
 			<article>

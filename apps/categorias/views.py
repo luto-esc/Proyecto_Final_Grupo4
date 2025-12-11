@@ -59,7 +59,6 @@ def filtro_categoria_todo(request,pk):
 	t = Tarjeta.objects.filter(categoria_sobre = c)
 	
 	
-	
 	context = {}
 	
 	context['posts'] = p
