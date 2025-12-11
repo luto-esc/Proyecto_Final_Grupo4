@@ -53,21 +53,24 @@ class Eliminar_Categoria(DeleteView):
 def filtro_categoria_todo(request,pk):
 	
 	c = Categoria_Sobre.objects.get(pk = pk)
+	cat = Categoria_Sobre.objects.get(pk = pk)
 
 	p = Post.objects.filter(categoria_sobre = c)
-	t = Tarjeta.objects.filter(categoria_sobre = c)	
+	t = Tarjeta.objects.filter(categoria_sobre = c)
+	
 	
 	
 	context = {}
 	
 	context['posts'] = p
 	context['tarjetas'] = t
-	
+	context['cat'] = cat
 	
 	categorias = Categoria_Sobre.objects.all()
 	
 	context['categorias'] = categorias
 	
+
 	return render(request,'categoriaxpostxtarjeta/detalle_categoria_lista_posts_tarjetas.html', context)
 
 

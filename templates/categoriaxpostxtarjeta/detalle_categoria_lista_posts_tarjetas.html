@@ -3,10 +3,10 @@
 {% block contenido %}
 
 	<section id="hero">
-		<img src="{{ categoria.imagen.url }}" />
+		<img src="{{ cat.imagen.url }}" />
 		<section>
-			<h2>{{ categoria.sobre }}</h2>
-			<p>{{ categoria.descripcion }}</p>
+			<h2>{{ cat.sobre }}</h2>
+			<p>{{ cat.descripcion }}</p>
 		</section>
 	</section>
 
@@ -45,36 +45,4 @@
 		</section>
 	</main>
 
-
-
-	<aside>
-		<h3>Categorias</h3>
-		<ul>
-			<li>
-				<a href="{% url 'tarjetas:path_listar_tarjetas'%}">Todos</a>
-			</li>
-			{% for c in categorias %}
-				<li>
-					<a href="{% url 'tarjetas:path_filtrados_categoria' c.pk %}"> {{ c.sobre }} </a>
-				</li>
-			{% endfor %}
-		</ul>
-	</aside>	
-
-	<main>
-		<h2>Publicaciones sobre fauna</h2>
-		<a href=" {% url 'tarjetas:path_crear_tarjeta' %}">Crear tarjeta fauna</a>
-		
-		<section id="tarjetas">
-		{% for t in tarjetas %}
-			<article>
-				<h3>{{t.nombre}}</h3>
-				<img src="{{ t.imagen.url }}">
-				<p>{{t.descripcion}}</p>
-				<a href="{% url 'tarjetas:path_detalle_tarjeta' t.pk %}">Ver detalle</a>
-				<a href="{% url 'tarjetas:path_eliminar_tarjeta' t.pk %}">Eliminar</a>
-			</article>
-		{% endfor %}
-		</section>
-	</main>
 {% endblock contenido %}
