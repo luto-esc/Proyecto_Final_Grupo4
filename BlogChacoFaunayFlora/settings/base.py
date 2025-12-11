@@ -27,6 +27,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 #ALLOWED_HOSTS = []
 
+from django.urls import reverse_lazy
+LOGIN_REDIRECT_URL = reverse_lazy('path_home')
+LOGOUT_REDIRECT_URL = reverse_lazy('path_home')
+LOGIN_URL = reverse_lazy('usuarios:path_login')
+
 
 # Application definition
 
@@ -41,6 +46,7 @@ INSTALLED_APPS = [
     'apps.posts',
     'apps.tarjetas',
     'apps.categorias',
+    'apps.usuarios',
 ]
 
 MIDDLEWARE = [
