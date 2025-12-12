@@ -1,15 +1,18 @@
 from django.shortcuts import render, HttpResponseRedirect
 from apps.posts.models import Post
 from apps.categorias.models import Categoria_Sobre
+from apps.tarjetas.models import Tarjeta
 
 def Home(request):
-    
     todos_posts = Post.objects.all()
+    categorias = Categoria_Sobre.objects.all()
+    tarjetas = Tarjeta.objects.all()
+
     context = {}
     context['posts'] = todos_posts
-
-    categorias = Categoria_Sobre.objects.all()
     context['categorias'] = categorias
+    context['tarjetas'] = tarjetas
+
     return render(request, 'home.html', context)
 
 def Contacto(request):

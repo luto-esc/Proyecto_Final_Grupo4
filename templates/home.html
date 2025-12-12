@@ -36,9 +36,30 @@
 					<a href="{% url 'posts:path_eliminar_post' p.pk %}" class="borrar"> Eliminar Publicación</a>
 				</p>
 			{% endif %}
+				
 				<img src="{{ p.imagen.url }}">
 				<p>{{p.descripcion}}</p>
 				<p><a href="{% url 'posts:path_detalle_post' p.pk %}"  class="flecha_d">Ver Mas</a></p>
+			</article>
+		{% endfor %}
+		</section>
+
+		<h2>Tarjetas</h2>
+		{% if user.is_staff %}
+			<a href=" {% url 'tarjetas:path_crear_tarjeta' %}">Crear tarjeta</a>
+		{% endif %}
+		<section id="tarjetas">
+		{% for t in tarjetas %}
+			<article>
+				<h3>{{t.nombre}}</h3>
+				<a href="{% url 'tarjetas:path_detalle_tarjeta' t.pk %}">
+					<img src="{{ t.imagen.url }}">
+				</a>
+				<p>{{t.descripcion}}</p>
+				{% if user.is_staff%}
+					<a href="{% url 'tarjetas:path_actualizar_tarjeta' t.pk %}">Actualizar</a>
+					<a href="{% url 'tarjetas:path_eliminar_tarjeta' t.pk %}">Eliminar</a>
+				{% endif %}
 			</article>
 		{% endfor %}
 		</section>
