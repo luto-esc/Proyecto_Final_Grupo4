@@ -10,7 +10,7 @@ def Home(request):
 
     categorias = Categoria_Sobre.objects.all()
     context['categorias'] = categorias
-    return render(request, 'home.html',)
+    return render(request, 'home.html', context)
 
 def Contacto(request):
     return render(request, 'contacto.html')

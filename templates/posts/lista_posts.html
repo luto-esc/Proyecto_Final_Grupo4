@@ -26,9 +26,7 @@
 				</p>
 			{% endif %}
 				<img src="{{p.imagen.url}}" />
-
 				<p>{{ p.descripcion }}</p>
-
 				<p><a href="{% url 'posts:path_detalle_post' p.pk %}"  class="flecha_d">Ver Mas</a></p>
 			</article>
 		{% endfor %}

@@ -14,22 +14,33 @@
 
 	<main>		
 		<h2>Últimas publicaciones</h2>
-		<a href="{% url 'posts:path_crear_post' %}"> Crear Publicación</a>
 		<section id="publicaciones">
-			{% for p in posts %}
-				<article>
-					<h3>{{p.titulo}}</h3>
-					<section class="post_info">
-						<!--<p class="autor">Por Lucho T</p>-->
-						<p class="fecha">{{p.fecha}}</p>
-						<p class="etiquetas">{{p.categoria_sobre}}</p>
-					</section>
-					<img src="{{ p.imagen.url }}">
-					<p>{{p.cuerpo}}</p>
-					<a href="{% url 'posts:path_actualizar_post' p.pk %}">Actualizar Publicación</a>
-					<a href="{% url 'posts:path_eliminar_post' p.pk %}"> Eliminar Publicación</a>
-				</article>
-			{% endfor %}
+		{% if user.is_staff %}
+			<p><a href="{% url 'posts:path_crear_post' %}"> Crear Publicación</a></p>
+		{% endif %}
+		{% for p in posts %}
+			<article>
+				<h3><a href="{% url 'posts:path_detalle_post' p.pk %}">{{p.titulo}}</a></h3>
+				<section class="post_info">
+					<!--<p class="autor">Por Lucho T</p>-->
+					<p class="fecha">{{p.fecha}}</p>
+					<ul>
+					{% for c in categorias %}
+						<li class="etiquetas">{{c.sobre}}</li>
+					{% endfor %}
+					</ul>
+				</section>
+			{% if user.is_staff %}
+				<p>
+					<a href="{% url 'posts:path_actualizar_post' p.pk %}" class="goma">Actualizar Publicación</a>
+					<a href="{% url 'posts:path_eliminar_post' p.pk %}" class="borrar"> Eliminar Publicación</a>
+				</p>
+			{% endif %}
+				<img src="{{ p.imagen.url }}">
+				<p>{{p.descripcion}}</p>
+				<p><a href="{% url 'posts:path_detalle_post' p.pk %}"  class="flecha_d">Ver Mas</a></p>
+			</article>
+		{% endfor %}
 		</section>
 	</main>
 
