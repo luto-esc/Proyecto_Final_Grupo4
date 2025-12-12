@@ -6,6 +6,8 @@ from apps.categorias.models import Categoria_Sobre
 from .forms import FormularioCrearActualizarTarjeta
 from django.urls import reverse_lazy
 from django.views.generic import DetailView, CreateView, UpdateView, DeleteView
+from django.contrib.auth.mixins import UserPassesTestMixin
+
 
 #------------------LISTAR-------------------
 def listar_tarjetas(request):
@@ -25,26 +27,44 @@ class Detalle_Tarjeta(DetailView):
 	template_name = 'tarjetas/detalle_tarjeta.html'
 	context_object_name = 'tarjetas'
 
-#------------------CREAR-------------------
+#------------------CREAR---------STAFFUSERS----------
 
-class Crear_Tarjeta(CreateView):
+class Crear_Tarjeta(UserPassesTestMixin, CreateView):
 	model = Tarjeta
 	template_name = 'tarjetas/crear_tarjeta.html'
 	form_class = FormularioCrearActualizarTarjeta
 	success_url = reverse_lazy('tarjetas:path_listar_tarjetas')
 
-#------------------Actualizar-------------------
-class Actualizar_Tarjeta(CreateView):
+	def test_func(self):
+		if self.request.user.is_staff:
+			return True
+		else:
+			return False	
+
+#------------------ACTUALIZAR---------STAFFUSERS----------
+class Actualizar_Tarjeta(UserPassesTestMixin, CreateView):
 	model = Tarjeta
 	template_name = 'tarjetas/actualizar_tarjeta.html'
 	form_class = FormularioCrearActualizarTarjeta
 	success_url = reverse_lazy('tarjetas:path_listar_tarjetas')
+	
+	def test_func(self):
+		if self.request.user.is_staff:
+			return True
+		else:
+			return False
 
-#------------------ELIMINAR-------------------
-class Eliminar_Tarjeta(DeleteView):
+#------------------ELIMINAR---------STAFFUSERS----------
+class Eliminar_Tarjeta(UserPassesTestMixin, DeleteView):
 	model = Tarjeta
 	template_name = 'tarjetas/eliminar_tarjeta.html'
 	success_url = reverse_lazy('tarjetas:path_listar_tarjetas')
+
+	def test_func(self):
+		if self.request.user.is_staff:
+			return True
+		else:
+			return False
 
 #------------------FILTRO-------------------
 def filtro_categoria(request,pk):

@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'apps.posts',
     'apps.tarjetas',
     'apps.categorias',
+    'apps.comentarios',
     'apps.usuarios',
 ]
 

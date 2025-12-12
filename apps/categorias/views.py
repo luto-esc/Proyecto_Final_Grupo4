@@ -13,6 +13,10 @@ from .forms import FormularioCrearActualizarCategoria
 from django.urls import reverse_lazy
 from django.views.generic import DetailView, CreateView, UpdateView, DeleteView
 
+
+#VBC
+from django.contrib.auth.mixins import UserPassesTestMixin
+
 #------------------LISTAR-------------------
 def listar_categorias(request):
 	todas_categorias = Categoria_Sobre.objects.all()
@@ -28,28 +32,48 @@ class Detalle_Categoria(DetailView):
 	template_name = 'categorias/detalle_categoria.html'
 	context_object_name = 'categorias'
 
-#------------------CREAR-------------------
 
-class Crear_Categoria(CreateView):
+#------------------CREAR---------STAFFUSERS----------
+
+class Crear_Categoria(UserPassesTestMixin, CreateView):
 	model = Categoria_Sobre
 	template_name = 'categorias/crear_categoria.html'
 	form_class = FormularioCrearActualizarCategoria
 	success_url = reverse_lazy('categorias:path_listar_categorias')
 
-#------------------Actualizar-------------------
-class Actualizar_Categoria(CreateView):
+	def test_func(self):
+		if self.request.user.is_staff:
+			return True
+		else:
+			return False
+
+#------------------Actualizar---------STAFFUSERS----------
+class Actualizar_Categoria(UserPassesTestMixin, CreateView):
 	model = Categoria_Sobre
 	template_name = 'categorias/actualizar_categorias.html'
 	form_class = FormularioCrearActualizarCategoria
 	success_url = reverse_lazy('tarjetas:path_listar_categorias')
 
-#------------------ELIMINAR-------------------
-class Eliminar_Categoria(DeleteView):
+	def test_func(self):
+		if self.request.user.is_staff:
+			return True
+		else:
+			return False
+
+#------------------ELIMINAR---------STAFFUSERS----------
+class Eliminar_Categoria(UserPassesTestMixin, DeleteView):
 	model = Categoria_Sobre
 	template_name = 'categorias/eliminar_categoria.html'
 	success_url = reverse_lazy('tarjetas:path_listar_categorias')
 
+	def test_func(self):
+		if self.request.user.is_staff:
+			return True
+		else:
+			return False
 
+
+#------------------FILTROXTODO-------------------
 def filtro_categoria_todo(request,pk):
 	
 	c = Categoria_Sobre.objects.get(pk = pk)

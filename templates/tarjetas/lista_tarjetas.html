@@ -16,16 +16,21 @@
 	</aside>	
 
 	<main>
-		<a href=" {% url 'tarjetas:path_crear_tarjeta' %}">Crear tarjeta fauna</a>
-		
+		{% if user.if_staff %}
+			<a href=" {% url 'tarjetas:path_crear_tarjeta' %}">Crear tarjeta fauna</a>
+		{% endif %}
 		<section id="tarjetas">
 		{% for t in tarjetas %}
 			<article>
 				<h3>{{t.nombre}}</h3>
 				<img src="{{ t.imagen.url }}">
 				<p>{{t.descripcion}}</p>
-				<a href="{% url 'tarjetas:path_detalle_tarjeta' t.pk %}">Ver detalle</a>
-				<a href="{% url 'tarjetas:path_eliminar_tarjeta' t.pk %}">Eliminar</a>
+				<a href="{% url 'tarjetas:path_detalle_tarjeta' t.pk %}">Ver Mas</a>
+				
+				{% if user.if_staff %}
+					<a href="{% url 'tarjetas:path_actualizar_tarjeta' t.pk %}">Actualizar</a>
+					<a href="{% url 'tarjetas:path_eliminar_tarjeta' t.pk %}">Eliminar</a>
+				{% endif %}
 			</article>
 		{% endfor %}
 		</section>

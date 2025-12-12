@@ -3,8 +3,9 @@
 {% block contenido %}
 <main>
 		<h2>Categoria</h2>
-		<a href=" {% url 'categorias:path_crear_categoria' %}">Crear categoria</a>
-		
+		{% if user.is_staff %}
+			<a href=" {% url 'categorias:path_crear_categoria' %}">Crear categoria</a>
+		{% endif %}
 		<section id="tarjetas">
 		{% for c in categorias %}
 			<article>
@@ -12,7 +13,11 @@
 					<h3>{{c.sobre}}</h3>
 				</a>
 				<a href="{% url 'categorias:path_detalle_categoria' c.pk %}">Ver detalle</a>
-				<a href="{% url 'categorias:path_eliminar_categoria' c.pk %}">Eliminar</a>
+				
+				{% if user.is_staff %}
+					<a href="{% url 'categorias:path_actualizar_categoria' c.pk %}">Actualizar</a>
+					<a href="{% url 'categorias:path_eliminar_categoria' c.pk %}">Eliminar</a>
+				{% endif %}
 			</article>
 		{% endfor %}
 		</section>

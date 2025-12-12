@@ -17,5 +17,6 @@ urlpatterns = [
     path('animales/', include('apps.tarjetas.urls')),
     path('categorias/', include('apps.categorias.urls')),
     path('usuarios/', include('apps.usuarios.urls')),
+    path('comentarios/', include('apps.comentarios.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) #Permite que las imagenes que son dinamicas se muestren en el navegador

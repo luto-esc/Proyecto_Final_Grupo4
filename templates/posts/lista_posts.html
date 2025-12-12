@@ -17,7 +17,9 @@
 
 	<main>		
 		<h2>Últimas publicaciones</h2>
-		<a href="{% url 'posts:path_crear_post' %}"> Crear Publicación</a>
+		{% if user.is_staff %}
+			<a href="{% url 'posts:path_crear_post' %}"> Crear Publicación</a>
+		{% endif %}
 		<section id="publicaciones">
 			{% for p in posts %}
 				<article>
@@ -29,8 +31,12 @@
 					</section>
 					<img src="{{ p.imagen.url }}">
 					<p>{{p.cuerpo}}</p>
-					<a href="{% url 'posts:path_actualizar_post' p.pk %}">Actualizar Publicación</a>
-					<a href="{% url 'posts:path_eliminar_post' p.pk %}"> Eliminar Publicación</a>
+					<a href="{% url 'posts:path_detalle_post' p.pk %}">Ver Mas</a>
+					
+					{% if user.is_staff %}
+						<a href="{% url 'posts:path_actualizar_post' p.pk %}">Actualizar Publicación</a>
+						<a href="{% url 'posts:path_eliminar_post' p.pk %}"> Eliminar Publicación</a>
+					{% endif %}
 				</article>
 			{% endfor %}
 		</section>

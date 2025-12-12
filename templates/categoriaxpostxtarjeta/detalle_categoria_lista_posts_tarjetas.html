@@ -14,7 +14,9 @@
 
 	<main>		
 		<h2>Publicaciones</h2>
-		<a href="{% url 'posts:path_crear_post' %}"> Crear Publicación</a>
+		{% if user.is_staff%}
+			<a href="{% url 'posts:path_crear_post' %}"> Crear Publicación</a>
+		{% endif %}
 		<section id="publicaciones">
 			{% for p in posts %}
 				<article>
@@ -25,14 +27,19 @@
 						<p class="etiquetas">{{p.categoria_sobre}}</p>
 					</section>
 					<img src="{{ p.imagen.url }}">
-					<a href="{% url 'posts:path_actualizar_post' p.pk %}">Actualizar Publicación</a>
-					<a href="{% url 'posts:path_eliminar_post' p.pk %}"> Eliminar Publicación</a>
+					<a href="{% url 'posts:path_detalle_post' p.pk %}">Ver Mas</a>
+					{% if user.is_staff %}
+						<a href="{% url 'posts:path_actualizar_post' p.pk %}">Actualizar Publicación</a>
+						<a href="{% url 'posts:path_eliminar_post' p.pk %}"> Eliminar Publicación</a>
+					{% endif %}
 				</article>
 			{% endfor %}
 		</section>
 
 		<h2>Tarjetas</h2>
-		<a href=" {% url 'tarjetas:path_crear_tarjeta' %}">Crear tarjeta</a>
+		{% if user.is_staff %}
+			<a href=" {% url 'tarjetas:path_crear_tarjeta' %}">Crear tarjeta</a>
+		{% endif %}
 		<section id="tarjetas">
 		{% for t in tarjetas %}
 			<article>
@@ -41,7 +48,10 @@
 					<img src="{{ t.imagen.url }}">
 				</a>
 				<p>{{t.descripcion}}</p>
-				<a href="{% url 'tarjetas:path_eliminar_tarjeta' t.pk %}">Eliminar</a>
+				{% if user.is_staff%}
+					<a href="{% url 'tarjetas:path_actualizar_tarjeta' t.pk %}">Actualizar</a>
+					<a href="{% url 'tarjetas:path_eliminar_tarjeta' t.pk %}">Eliminar</a>
+				{% endif %}
 			</article>
 		{% endfor %}
 		</section>
