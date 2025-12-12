@@ -4,14 +4,9 @@
 	<aside>
 		<h3>Categorias</h3>
 		<ul>
-			<li>
-				<a href="{% url 'posts:path_listar_posts'%}">Todos</a>
-			</li>
-			{% for c in categorias %}
-				<li>
-					<a href="{% url 'posts:path_filtrados_categoria_post' c.pk %}"> {{ c.sobre }} </a>
-				</li>
-			{% endfor %}
+		{% for c in categorias %}
+			<li><a href="{% url 'posts:path_filtrados_categoria_post' c.pk %}">{{ c.sobre }}</a></li>
+		{% endfor %}
 		</ul>
 	</aside>	
 
@@ -21,6 +16,7 @@
 			<a href="{% url 'posts:path_crear_post' %}"> Crear Publicación</a>
 		{% endif %}
 		<section id="publicaciones">
+<<<<<<< HEAD
 			{% for p in posts %}
 				<article>
 					<h3>{{p.titulo}}</h3>
@@ -39,6 +35,28 @@
 					{% endif %}
 				</article>
 			{% endfor %}
+=======
+		{% for p in posts %}
+			<article>
+				<h3><a href="#">{{p.titulo}}</a></h3>
+				<!--	
+
+					DESCOMENTAR ESTE Y AGREGAR EL ENLACE A
+					/detalle_post.html EN EL H3
+
+				-->
+				<section class="post_info">
+					<!--<p class="autor">Por Lucho T</p>-->
+					<p class="fecha">{{p.fecha}}</p>
+					<p class="etiquetas">{{p.categoria_sobre}}</p>
+				</section>
+				<img src="{{ p.imagen.url }}">
+				<p>{{p.cuerpo}}</p>
+				<a href="{% url 'posts:path_actualizar_post' p.pk %}">Actualizar Publicación</a>
+				<a href="{% url 'posts:path_eliminar_post' p.pk %}"> Eliminar Publicación</a>
+			</article>
+		{% endfor %}
+>>>>>>> db6cae6 (actualizado base y lista_posts)
 		</section>
 	</main>
 {% endblock contenido %} 
