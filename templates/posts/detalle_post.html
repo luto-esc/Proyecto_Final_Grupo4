@@ -22,11 +22,13 @@
 					</ul>
 				</section>
 				<p>{{ posts.cuerpo }}</p>
+			{% if user.is_authenticated %}
 				<form method="POST" action="{% url 'comentarios:path_comentar' posts.pk %}">{% csrf_token %}
-				<textarea name="texto_comentado">
-				</textarea>
-				<button type="submit">COMENTAR</button>
-			</form>
+					<textarea name="texto_comentado">
+					</textarea>
+					<button type="submit">COMENTAR</button>
+				</form>
+			{% endif %}
 			</article>
 		</section>
 	</main>
