@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
-
 {% block contenido %}
-	<main>		
+	<main>
 		<h2>Login</h2>
 		<section id="publicaciones">
 			<form method="post" enctype="multipart/form-data">{% csrf_token %}
 				{{ form.as_p }}
 				<input type="submit" value="Ingresar">
-				<a href="{% url 'path_home' %}"> Cancelar</a>
+				<p>No tenés cuenta? <a href="{% url 'usuarios:path_registro' %}">registrate</a> <br />
+				<a href="{% url 'path_home' %}">Volver</a></p>
 			</form>
 		</section>
 	</main>
