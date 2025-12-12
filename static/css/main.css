@@ -223,10 +223,14 @@ main h2 {
 	font-weight:bolder;
 	font-size:4.5rem;
 	text-align: center;
-	color:rgb(240 240 240);
-	background-color:rgb(42 166 62);
-	text-shadow: -1px 1px 1px rgb(51 51 51 / 90%),
-		1px -1px 0 rgba(42, 166, 62, 84%);
+	/*color:rgb(240 240 240);*/
+	color: #333;
+	/*background-color:rgb(42 166 62);*/
+	background-color: rgb(255 255 255 / 75%);
+	text-shadow: -1px 1px 0 rgb(42 166 62 / 75%),
+		-2px 2px 0 rgb(42 166 62 / 75%);
+	/*text-shadow: -1px 1px 1px rgb(51 51 51 / 90%),
+		1px -1px 0 rgba(42, 166, 62, 84%);*/
 }
 main section {
 	width:100%;
@@ -293,6 +297,10 @@ main section#publicaciones article {
 	background-color:#eee;
 	padding: 1.5em;
 	border-radius: 6px 2.4rem 6px 2.4rem;
+	border-bottom: 3px solid rgb(30 30 30 / 30%);
+	border-left: 1px solid rgb(30 30 30 / 15%);
+	border-top: 1px solid rgb(255 255 255 / 75%);
+	border-right: 3px solid rgb(255 255 255 / 30%);
 }
 main section#publicaciones article h3 {
 	text-shadow: 1px -2px 0 white/*, 2px -2px 0 white*/;	
@@ -411,6 +419,10 @@ main section#tarjetas article {
 	padding:1em;
 	background-color:rgba(42, 166, 62, 100%);
 	border-radius: 6px 2.4rem 6px 2.4rem;
+	border-bottom: 3px solid rgb(30 30 30 / 30%);
+	border-left: 1px solid rgb(30 30 30 / 15%);
+	border-top: 1px solid rgb(255 255 255 / 75%);
+	border-right: 3px solid rgb(255 255 255 / 30%);
 }
 main section#tarjetas article * {
 	color:rgb(240 240 240);
