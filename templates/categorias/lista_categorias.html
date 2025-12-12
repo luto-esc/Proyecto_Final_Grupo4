@@ -8,10 +8,14 @@
 		{% endif %}
 		<section id="tarjetas">
 		{% for c in categorias %}
+	<main>
+		<h2>Categorias del blog</h2>
+		<a href=" {% url 'categorias:path_crear_categoria' %}">Crear categoria</a>
+		<section id="publicaciones">
+		{% for c in categorias %}
 			<article>
-				<a href="{% url 'categorias:path_filtrado_categoria_todo' c.pk %}">
-					<h3>{{c.sobre}}</h3>
-				</a>
+				<h3><a href="{% url 'categorias:path_filtrado_categoria_todo' c.pk %}">{{c.sobre}}</a></h3>
+				<p>{{c.descripcion}}</p>
 				<a href="{% url 'categorias:path_detalle_categoria' c.pk %}">Ver detalle</a>
 				
 				{% if user.is_staff %}
