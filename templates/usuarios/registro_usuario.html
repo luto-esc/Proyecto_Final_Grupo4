@@ -1,12 +1,14 @@
 {% extends 'base.html' %}
 {% block contenido %}
 	<main>		
-		<h2>Registrarse</h2>
+		<h2>Registro de usuarios</h2>
 		<section id="publicaciones">
 			<form method="post" enctype="multipart/form-data">{% csrf_token %}
-				{{ form.as_p }}
-				<input type="submit" value="Registrar">
-				<a href="{% url 'path_home' %}"> Cancelar</a>
+				<ul class="grid">
+				{{ form.as_ul }}
+				<li class="ancho"><button>Registrate!</button></li>
+				<li class="ancho"><a href="{% url 'path_home' %}">Cancelar</a></li>
+				</ul>
 			</form>
 		</section>
 	</main>

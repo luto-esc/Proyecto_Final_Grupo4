@@ -4,10 +4,12 @@
 		<h2>Login</h2>
 		<section id="publicaciones">
 			<form method="post" enctype="multipart/form-data">{% csrf_token %}
-				{{ form.as_p }}
-				<input type="submit" value="Ingresar">
-				<p>No tenés cuenta? <a href="{% url 'usuarios:path_registro' %}">registrate</a> <br />
-				<a href="{% url 'path_home' %}">Volver</a></p>
+				<ul class="grid">
+				{{ form.as_ul }}
+				<!--<input type="submit" value="Ingresar">-->
+				<li class="centrado"><button>Ingresar</button></li>
+				<li class="centrado">No tenés cuenta? <br /><a href="{% url 'usuarios:path_registro' %}">Registrate</a> | <a href="{% url 'path_home' %}">Volver</a></li>
+				</ul>
 			</form>
 		</section>
 	</main>
