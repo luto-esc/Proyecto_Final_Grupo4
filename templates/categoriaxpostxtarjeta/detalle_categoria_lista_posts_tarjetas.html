@@ -27,6 +27,7 @@
 						<p class="etiquetas">{{p.categoria_sobre}}</p>
 					</section>
 					<img src="{{ p.imagen.url }}">
+					<p>{{p.cuerpo}}</p>
 					<a href="{% url 'posts:path_detalle_post' p.pk %}">Ver Mas</a>
 					{% if user.is_staff %}
 						<a href="{% url 'posts:path_actualizar_post' p.pk %}">Actualizar Publicación</a>
