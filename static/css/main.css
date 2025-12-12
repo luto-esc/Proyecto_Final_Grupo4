@@ -301,22 +301,36 @@ main section#publicaciones section.post_info {
 	border-radius: 3px;
 	columns:3;
 }
-main section#publicaciones article p.autor,
-main section#publicaciones article p.fecha,
-main section#publicaciones article p.etiquetas {
-	font-size: 1.2em;
+main section#publicaciones article .autor,
+main section#publicaciones article .fecha,
+main section#publicaciones article .etiquetas,
+main section#publicaciones article .flecha_d,
+main section#publicaciones article .goma,
+main section#publicaciones article .borrar {
+	font-size: 1.2rem;
 	margin:auto;
 	padding-left:1.8em;
+	padding-bottom:0.1em;
 	background-repeat: no-repeat;
 }
-main section#publicaciones article p.autor {
+main section#publicaciones article .autor {
 	background-image:url("../img/pencil-line-16.png");
 }
-main section#publicaciones article p.fecha {
+main section#publicaciones article .fecha {
 	background-image:url("../img/calendar-days.png");
 }
-main section#publicaciones article p.etiquetas {
+main section#publicaciones article .etiquetas {
 	background-image:url("../img/paw-print.png");
+}
+main section#publicaciones article .flecha_d {
+	background-image:url("../img/arrow-right.png");
+	font-weight:bold;
+}
+main section#publicaciones article .goma {
+	background-image:url("../img/eraser.png");
+}
+main section#publicaciones article .borrar {
+	background-image:url("../img/trash-2.png");
 }
 main section#publicaciones form {
 	width:100%;

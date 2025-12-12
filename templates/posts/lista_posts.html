@@ -19,21 +19,23 @@
 				<section class="post_info">
 					<!--<p class="autor">Por Lucho T</p>-->
 					<p class="fecha">{{p.fecha}}</p>
-					<p class="etiquetas">
+					<ul>
 					{% for c in categorias %}
-						{{c.sobre}}
+						<li class="etiquetas">{{c.sobre}}</li>
 					{% endfor %}
-					</p>
+					</ul>
 				</section>
-				<img src="{{p.imagen.url}}" />
-				
-				<p>{{p.cuerpo}}</p>
-
-				<p><a href="{% url 'posts:path_detalle_post' p.pk %}">Ver Mas</a></p>
 			{% if user.is_staff %}
-				<p><a href="{% url 'posts:path_actualizar_post' p.pk %}">Actualizar Publicación</a> |
-				<a href="{% url 'posts:path_eliminar_post' p.pk %}"> Eliminar Publicación</a></p>
+				<p>
+					<a href="{% url 'posts:path_actualizar_post' p.pk %}" class="goma">Actualizar Publicación</a>
+					<a href="{% url 'posts:path_eliminar_post' p.pk %}" class="borrar"> Eliminar Publicación</a>
+				</p>
 			{% endif %}
+				<img src="{{p.imagen.url}}" />
+
+				<p>{{ p.cuerpo }}</p>
+
+				<p><a href="{% url 'posts:path_detalle_post' p.pk %}"  class="flecha_d">Ver Mas</a></p>
 			</article>
 		{% endfor %}
 		</section>
