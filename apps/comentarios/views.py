@@ -10,6 +10,4 @@ def comentar(request, pk):
 	u = request.user
 
 	c = request.POST.get('texto_comentado', None)
-	Comentario.objects.create(texto = c, usuario = u, producto = c)
-
-
+	Comentario.objects.create(texto = c, usuario = u, post = c)

@@ -8,7 +8,7 @@ class Comentario(models.Model):
 	fecha_modificado = models.DateTimeField(auto_now = True)
 	texto = models.TextField()
 	usuario = models.ForeignKey(User, on_delete = models.CASCADE)
-	producto = models.ForeignKey(Post, on_delete = models.CASCADE)
+	post = models.ForeignKey(Post, on_delete = models.CASCADE)
 
 	def __str__(self):
 		return self.fecha_creado
