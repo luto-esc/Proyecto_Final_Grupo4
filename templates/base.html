@@ -21,12 +21,15 @@
 			</ul>
 		</nav>
 	{% if user.is_authenticated %}
-		<section>
-			<h4>Hola, {{ user.username }}</h4>
-			<form method="POST" action="{% url 'usuarios:path_logout' %}">{% csrf_token %}
-			<input type="submit" value="Logout">
-			</form>
-		</section>
+		<ul class="autenticado">
+			<li>Hola, {{ user.username }} :) </li>
+			<li>
+				<a href="{% url 'usuarios:path_logout' %}">Cerrar sesión</a>
+				<!--<form method="POST" action="{% url 'usuarios:path_logout' %}">{% csrf_token %}
+					<input type="submit" value="Logout">
+				</form>-->
+			</li>
+		</ul>
 	{% else %}
 		<ul>
 			<li><a href="{% url 'usuarios:path_login' %}">Acceder</a> |</li>

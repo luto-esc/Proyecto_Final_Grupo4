@@ -64,11 +64,9 @@ header {
 	min-width: 300px;
 	background-color: rgba(42, 166, 62, 84%);
 	padding:1.5em 10em;
-	margin-bottom:-1em
+	margin-bottom:-1em;
 }
 header h1 {
-	/*margin: auto;*/
-	/*padding: 3rem;*/
 	text-shadow: -1px -1px 0 rgb(255 255 245),
 		-2px -2px 0 #ccc,
 		-3px -3px 0 #ccc,
@@ -85,31 +83,37 @@ header h1 em {
 	color: rgb(255 255 245)
 }
 
+/*
+				navbar
+										*/
 header nav {
-	/*background-color: red;*/
 	margin:auto;
-}
-header ul {
-	color:rgb(255 255 245);
 }
 header ul li {
 	font-size: 1.8rem;
 	line-height:2.5em;
 	display:inline;
-}
-header button {
-	padding:1em 2em;
-	padding-left:3.5em;
-	font-size:1.2em;
-	font-weight:bold;
 	color: rgb(255 255 245);
-	background-color: rgba(42, 166, 62, 84%);
+	text-shadow: 1px 1px 1px rgb(51 51 51 / 75%);
+}
+header ul.autenticado li,
+header ul.autenticado li a,
+header ul.autenticado li a:link,
+header ul.autenticado li a:hover,
+header ul.autenticado li a:visited {
+	font-size:1em;
+	font-weight:bold;
+}
+header ul.autenticado li a,
+header ul.autenticado li a:link,
+header ul.autenticado li a:hover,
+header ul.autenticado li a:visited {
+	padding:1em;
+	padding-left:2.2em;
 	background-image:url("../img/circle-user-round.png");
 	background-repeat: no-repeat;
-	background-position: 1em 0.6em;
-	border: 1px solid rgb(51 51 51 / 45%);
-	border-radius:50rem;
-	text-shadow: 1px -1px 0 #333;
+	background-position-y: 50%;
+	background-position-x: 0.3em;
 }
 
 header p {
@@ -379,9 +383,15 @@ main section#publicaciones form ul li span.helptext {
 	margin-top:1em;
 }
 main section#publicaciones form ul li span.helptext,
-main section#publicaciones form ul li span.helptext ul li {
+main section#publicaciones form ul li span.helptext ul li,
+main section#publicaciones form ul li ul.errorlist li {
 	font-size: 0.8em;
 	line-height:1.6em;
+}
+main section#publicaciones form ul li ul.errorlist li {
+	font-weight: bold;
+	font-style: oblique;
+	color: red;
 }
 main section#publicaciones form button {
 	font-weight: bold;
