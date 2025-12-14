@@ -14,8 +14,14 @@
 				<p>Este trabajo lo hemos hecho Lucio y Luciano, integrantes del Grupo 4 de la etapa 2 del Informatorio 2025. Es una aplicación web con formato de blog desarrollada en Python con el framework Django, HTML y CSS.</p>
 				<p>Producto artesanal, hecho en Resistencia, Chaco.</p>
 				<h3>Mandar un mensaje</h3>
-				<form method="post" enctype="multipart/form-data">{% csrf_token %}
+				<form method="post" enctype="multipart/form-data">
 					<ul class="grid">
+					{% if messages %}	
+						{% for message in messages %}
+							<li class="success">{{message}}</li>
+						{% endfor %}
+					{% endif %}
+						{% csrf_token %}
 						{{ form.as_ul }}
 						<li class="centrado"><button>Enviar</button></li>
 					</ul>

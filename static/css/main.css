@@ -394,6 +394,11 @@ main section#publicaciones form ul li ul.errorlist li {
 	font-style: oblique;
 	color: red;
 }
+main section#publicaciones form ul li.success {
+	font-weight: bold;
+	font-style: oblique;
+	color: green;
+}
 main section#publicaciones form button {
 	font-weight: bold;
 	border: 3px solid rgb(42 166 62);

@@ -12,7 +12,12 @@ class RegistroUsuario(CreateView):
 class ContactoUsuario(CreateView):
 	template_name = 'nosotros.html'
 	form_class = FormularioContacto
-	success_url = reverse_lazy('path_home')
+	success_url = reverse_lazy('usuarios:path_contacto')
+
+	def get_context_data(self, **kwargs):
+		context = super().get_context_data(**kwargs)
+		context['request'] = self.request
+		return context
 
 	def form_valid(self, form):
 		messages.success(self.request, 'Consulta enviada :)')
