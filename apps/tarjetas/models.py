@@ -1,9 +1,5 @@
 from django.db import models
-
-# Create your models here.
-
 from apps.categorias.models import Categoria_Sobre
-
 
 
 class Tarjeta(models.Model):

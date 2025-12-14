@@ -16,20 +16,33 @@
 	</aside>	
 
 	<main>
-		{% if user.if_staff %}
-			<a href=" {% url 'tarjetas:path_crear_tarjeta' %}">Crear tarjeta fauna</a>
-		{% endif %}
+	{% if user.is_staff %}
+		<section class="panel_usuario">
+			<p>{{user.username}}, tus herramientas: 
+				<a href="{% url 'posts:path_crear_post' %}"> Crear Publicación</a>
+				<a href=" {% url 'tarjetas:path_crear_tarjeta' %}">Crear tarjeta</a>
+			</p>
+		</section>
+	{% endif %}
+		<h2>Tarjetas</h2>
 		<section id="tarjetas">
 		{% for t in tarjetas %}
 			<article>
-				<h3>{{t.nombre}}</h3>
-				<img src="{{ t.imagen.url }}">
+				<a href="{% url 'tarjetas:path_detalle_tarjeta' t.pk %}">
+					<h3>{{t.nombre}}</h3>
+					<img src="{{ t.imagen.url }}">
+				</a>
+				<p>Categorías: 
+				{% for c in t.categoria_sobre.all %}
+					<a href="{% url 'categorias:path_filtrado_categoria_todo' c.pk %}">{{c.sobre}}</a>
+				{% endfor %}
+				</p>
 				<p>{{t.descripcion}}</p>
-				<a href="{% url 'tarjetas:path_detalle_tarjeta' t.pk %}">Ver Mas</a>
-				
-				{% if user.if_staff %}
-					<a href="{% url 'tarjetas:path_actualizar_tarjeta' t.pk %}">Actualizar</a>
-					<a href="{% url 'tarjetas:path_eliminar_tarjeta' t.pk %}">Eliminar</a>
+				{% if user.is_staff%}
+					<p>
+						<a href="{% url 'tarjetas:path_actualizar_tarjeta' t.pk %}">Actualizar</a> | 
+						<a href="{% url 'tarjetas:path_eliminar_tarjeta' t.pk %}">Eliminar</a>
+					</p>
 				{% endif %}
 			</article>
 		{% endfor %}

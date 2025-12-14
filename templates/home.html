@@ -31,7 +31,7 @@
 					<p class="fecha">{{p.fecha}}</p>
 					<ul>
 					{% for c in p.categoria_sobre.all %}
-						<li class="etiquetas">{{c.sobre}}</li>
+						<li class="etiquetas"><a href="{% url 'categorias:path_filtrado_categoria_todo' c.pk %}">{{c.sobre}}</a></li>
 					{% endfor %}
 					</ul>
 				</section>
@@ -53,10 +53,15 @@
 		<section id="tarjetas">
 		{% for t in tarjetas %}
 			<article>
-				<h3>{{t.nombre}}</h3>
 				<a href="{% url 'tarjetas:path_detalle_tarjeta' t.pk %}">
+					<h3>{{t.nombre}}</h3>
 					<img src="{{ t.imagen.url }}">
 				</a>
+				<p>Categorías: 
+				{% for c in t.categoria_sobre.all %}
+					<a href="{% url 'categorias:path_filtrado_categoria_todo' c.pk %}">{{c.sobre}}</a>
+				{% endfor %}
+				</p>
 				<p>{{t.descripcion}}</p>
 				{% if user.is_staff%}
 					<p>
@@ -68,5 +73,4 @@
 		{% endfor %}
 		</section>
 	</main>
-
 {% endblock contenido %}

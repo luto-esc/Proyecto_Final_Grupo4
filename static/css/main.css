@@ -345,7 +345,7 @@ main section#publicaciones section.post_info {
 	background-color:white;
 	border-bottom:1px solid #ccc;
 	border-radius: 3px;
-	columns:3;
+	columns:2;
 }
 main section#publicaciones article .autor,
 main section#publicaciones article .fecha,

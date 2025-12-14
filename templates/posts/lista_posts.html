@@ -20,7 +20,7 @@
 					<p class="fecha">{{p.fecha}}</p>
 					<ul>
 					{% for c in p.categoria_sobre.all %}
-						<li class="etiquetas">{{c.sobre}}</li>
+						<li class="etiquetas"><a href="{% url 'categorias:path_filtrado_categoria_todo' c.pk %}">{{c.sobre}}</a></li>
 					{% endfor %}
 					</ul>
 				</section>
