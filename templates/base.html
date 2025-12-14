@@ -16,13 +16,14 @@
 			<ul>
                 <li><a href="{% url 'path_home' %}">Inicio</a></li>
                 <li><a href="{% url 'posts:path_listar_posts' %}">Publicaciones</a></li>
+                <li><a href="{% url 'tarjetas:path_listar_tarjetas' %}">Tarjetas</a></li>
                 <li><a href="{% url 'categorias:path_listar_categorias' %}">Categorias</a></li>
                 <li><a href="{% url 'usuarios:path_contacto' %}">Nosotros</a></li>
 			</ul>
 		</nav>
 	{% if user.is_authenticated %}
 		<ul class="autenticado">
-			<li>Hola, {{ user.username }} :) </li>
+			<li>{{ user.username }}</li>
 			<li>
 				<form method="POST" action="{% url 'usuarios:path_logout' %}">
 					{% csrf_token %}
