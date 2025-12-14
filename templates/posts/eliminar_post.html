@@ -8,7 +8,7 @@
 			<form method="post" enctype="multipart/form-data">{% csrf_token %}
 				<ul class="grid">
 				{{ form.as_ul }}
-				<li class="centrado"><button>Eliminar</button></li>
+				<li class="centrado"><button type="submit">Eliminar</button></li>
 				<li class="centrado"><a href="{% url 'posts:path_listar_posts' %}">Cancelar</a></li>
 				</ul>
 			</form>
