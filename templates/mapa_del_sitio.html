@@ -9,21 +9,28 @@
 				<ul class="mapa">
 					<li>
 						<h3>Publicaciones</h3>
-							<ul>
+							<ul class="col2">
 							{% for p in posts %}
-								<li><a href="{% url 'posts:path_detalle_post' p.pk %}">{{p.titulo}}</li>
+								<li><a href="{% url 'posts:path_detalle_post' p.pk %}">{{p.titulo}}</a></li>
 							{% endfor %}
 							</ul>
 					</li>
 					<li>
 						<h3>Categorías</h3>
-							<ul>
+							<ul class="col4">
 							{% for c in categorias %}
-								<li><a href="{% url 'categorias:path_filtrado_categoria_todo' c.pk %}">{{p.titulo}}</li>
+								<li><a href="{% url 'categorias:path_filtrado_categoria_todo' c.pk %}">{{c.sobre}}</a></li>
 							{% endfor %}
 							</ul>
 					</li>
-					<li></li>
+					<li>
+						<h3>Tarjetas</h3>
+							<ul class="col3">
+							{% for t in tarjetas %}
+								<li><a href="#">{{t.nombre}}</a></li>
+							{% endfor %}
+							</ul>
+					</li>
 					<li></li>
 					<li></li>
 				</ul>
