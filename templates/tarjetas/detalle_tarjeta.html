@@ -5,8 +5,12 @@
 		<img src="{{ tarjetas.imagen.url }}" />
 		<section>
 			<h2>{{ tarjetas.nombre }}</h2>
+			<p>Categorías:
+			{% for c in tarjetas.categoria_sobre.all %}
+				<a href="{% url 'categorias:path_filtrado_categoria_todo' c.pk %}">{{c.sobre}}</a>
+			{% endfor %}
+			</p>
 			<p>{{ tarjetas.descripcion }}</p>
-			<p>{{ tarjetas.categoria }}</p>
 		</section>
 	</section>
 {% endblock contenido %}

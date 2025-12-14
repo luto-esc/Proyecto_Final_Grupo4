@@ -2,13 +2,13 @@
 
 {% block contenido %}
 	<main>
-	<h2>Actualizar Tarjeta de Flora</h2>
+	<h2>Actualizar Tarjeta</h2>
 		<section id="publicaciones">
 		<form method="post" enctype="multipart/form-data">{% csrf_token %}
 			<ul class="grid">
 			{{ form.as_ul }}
 			<li class="centrado"><button type="submit">Enviar</button></li>
-			<li class="centrado"><a href="{% url 'posts:path_listar_tarjetas' %}">Cancelar</a></li>
+			<li class="centrado"><a href="{% url 'tarjetas:path_listar_tarjetas' %}">Cancelar</a></li>
 			</ul>
 		</form>
 		</section>

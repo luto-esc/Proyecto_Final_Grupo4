@@ -14,7 +14,7 @@ urlpatterns = [
     path('mapa_del_sitio/', views.MapaDelSitio, name = 'path_mapa_del_sitio'),
     path('contacto/', include('apps.usuarios.urls')), #Nosotros/Contacto
     path('posts/', include('apps.posts.urls')),
-    path('animales/', include('apps.tarjetas.urls')),
+    path('tarjetas/', include('apps.tarjetas.urls')),
     path('categorias/', include('apps.categorias.urls')),
     path('usuarios/', include('apps.usuarios.urls')),
     path('comentarios/', include('apps.comentarios.urls')),

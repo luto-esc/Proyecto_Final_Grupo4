@@ -1,20 +1,6 @@
 {% extends 'base.html' %}
 
 {% block contenido %}
-	<aside>
-		<h3>Categorias</h3>
-		<ul>
-			<li>
-				<a href="{% url 'tarjetas:path_listar_tarjetas'%}">Todos</a>
-			</li>
-			{% for c in categorias %}
-				<li>
-					<a href="{% url 'tarjetas:path_filtrados_categoria' c.pk %}"> {{ c.sobre }} </a>
-				</li>
-			{% endfor %}
-		</ul>
-	</aside>	
-
 	<main>
 	{% if user.is_staff %}
 		<section class="panel_usuario">

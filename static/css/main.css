@@ -50,6 +50,13 @@ body {
 	background-attachment: fixed;
 	background-repeat: no-repeat
 }
+#hero a, footer a,
+#hero a:link, footer a:link,
+#hero a:hover, footer a:hover
+#hero a:active, footer a:active,
+#hero a:visited, footer a:visited {
+	color: white;
+}
 a:hover {
 	text-decoration: underline;
 }
@@ -516,11 +523,4 @@ footer h4 {
 }
 footer h4, footer p, footer ul, footer ol, footer li {
 	color: rgb(255 255 245);
-}
-footer a,
-footer a:link,
-footer a:hover,
-footer a:active,
-footer a:visited {
-	color: white;
 }

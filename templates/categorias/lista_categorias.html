@@ -3,21 +3,29 @@
 {% block contenido %}
 	<main>
 		<h2>Categorías del blog</h2>
+	{% if user.is_staff %}
+		<section class="panel_usuario">
+			<p>{{user.username}}, tus herramientas: 
+				<a href="{% url 'posts:path_crear_post' %}"> Crear Publicación</a>
+				<a href=" {% url 'tarjetas:path_crear_tarjeta' %}">Crear tarjeta</a>
+				<a href=" {% url 'categorias:path_crear_categoria' %}">Crear categoría</a>
+			</p>
+		</section>
+	{% endif %}
+
+
 		<section id="publicaciones">
-		{% if user.is_staff %}
-			<section class="post_info">
-				<a href=" {% url 'categorias:path_crear_categoria' %}">Crear categoria</a>
-			</section>
-		{% endif %}
 		{% for c in categorias %}
 			<article>
 				<h3><a href="{% url 'categorias:path_filtrado_categoria_todo' c.pk %}">{{c.sobre}}</a></h3>
 				<p>{{c.descripcion}}</p>
-				<a href="{% url 'categorias:path_filtrado_categoria_todo' c.pk %}">Ver detalle</a>
-				{% if user.is_staff %}
-					<a href="{% url 'categorias:path_actualizar_categoria' c.pk %}">Actualizar</a>
-					<a href="{% url 'categorias:path_eliminar_categoria' c.pk %}">Eliminar</a>
-				{% endif %}
+
+			{% if user.is_staff %}
+				<p>
+					<a href="{% url 'categorias:path_actualizar_categoria' c.pk %}" class="goma">Actualizar Categoría</a>
+					<a href="{% url 'categorias:path_eliminar_categoria' c.pk %}" class="borrar"> Eliminar Categoría</a>
+				</p>
+			{% endif %}
 			</article>
 		{% endfor %}
 		</section>
