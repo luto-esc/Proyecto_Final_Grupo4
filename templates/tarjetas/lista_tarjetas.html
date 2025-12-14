@@ -2,6 +2,7 @@
 
 {% block contenido %}
 	<main>
+		<h2>Tarjetas</h2>
 	{% if user.is_staff %}
 		<section class="panel_usuario">
 			<p>{{user.username}}, tus herramientas: 
@@ -10,7 +11,6 @@
 			</p>
 		</section>
 	{% endif %}
-		<h2>Tarjetas</h2>
 		<section id="tarjetas">
 		{% for t in tarjetas %}
 			<article>
