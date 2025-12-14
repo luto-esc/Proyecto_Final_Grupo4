@@ -10,7 +10,8 @@ from django.conf.urls.static import static # las imagenes cargen
 urlpatterns = [
     path('admin/', admin.site.urls),
     
-    path('', views.Home, name = 'path_home'), #Post
+    path('', views.Home, name = 'path_home'),
+    path('mapa_del_sitio/', views.MapaDelSitio, name = 'path_mapa_del_sitio'),
     path('contacto/', include('apps.usuarios.urls')), #Nosotros/Contacto
     path('posts/', include('apps.posts.urls')),
     path('animales/', include('apps.tarjetas.urls')),
