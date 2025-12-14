@@ -32,7 +32,7 @@
 		<section id="publicaciones">
 			{% for p in posts %}
 				<article>
-					<h3>{{p.titulo}}</h3>
+					<h3><a href="{% url 'posts:path_detalle_post' p.pk %}">{{p.titulo}}</a></h3>
 					<section class="post_info">
 						<!--<p class="autor">Por Lucho T</p>-->
 						<p class="fecha">{{p.fecha}}</p>
