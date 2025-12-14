@@ -25,7 +25,7 @@
 					<!--<p class="autor">Por Lucho T</p>-->
 					<p class="fecha">{{p.fecha}}</p>
 					<ul>
-					{% for c in categorias %}
+					{% for c in p.categoria_sobre.all %}
 						<li class="etiquetas">{{c.sobre}}</li>
 					{% endfor %}
 					</ul>

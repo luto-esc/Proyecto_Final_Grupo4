@@ -14,9 +14,6 @@ def listar_posts(request):
 	todos_posts = Post.objects.all()
 	context = {}
 	context['posts'] = todos_posts
-
-	categorias = Categoria_Sobre.objects.all()
-	context['categorias'] = categorias
 	
 	return render(request,'posts/lista_posts.html', context)
 
