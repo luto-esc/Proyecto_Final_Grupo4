@@ -17,3 +17,6 @@ class Post(models.Model):
 
 	def __str__(self):
 		return self.titulo
+
+	def muestraComentarios(self):
+		return self.comentario_set.all()
