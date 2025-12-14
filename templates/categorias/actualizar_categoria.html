@@ -4,7 +4,8 @@
 	<main>
 	<h2>Actualizar Categoría</h2>
 		<section id="publicaciones">
-			<form method="post" enctype="multipart/form-data">{% csrf_token %}
+			<form method="post" enctype="multipart/form-data">
+				{% csrf_token %}
 				<ul class="grid">
 				{{ form.as_ul }}
 				<li class="centrado"><button type="submit">Enviar</button></li>

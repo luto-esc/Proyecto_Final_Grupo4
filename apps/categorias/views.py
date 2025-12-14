@@ -48,7 +48,7 @@ class Crear_Categoria(UserPassesTestMixin, CreateView):
 			return False
 
 #------------------Actualizar---------STAFFUSERS----------
-class Actualizar_Categoria(UserPassesTestMixin, CreateView):
+class Actualizar_Categoria(UserPassesTestMixin, UpdateView):
 	model = Categoria_Sobre
 	template_name = 'categorias/actualizar_categoria.html'
 	form_class = FormularioCrearActualizarCategoria
@@ -59,6 +59,7 @@ class Actualizar_Categoria(UserPassesTestMixin, CreateView):
 			return True
 		else:
 			return False
+
 
 #------------------ELIMINAR---------STAFFUSERS----------
 class Eliminar_Categoria(UserPassesTestMixin, DeleteView):
