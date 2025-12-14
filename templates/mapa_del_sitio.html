@@ -8,14 +8,7 @@
 				<h3>chacoverde</h3>
 				<ul class="mapa">
 					<li>
-						<h3>Publicaciones</h3>
-							<ul class="col2">
-							{% for p in posts %}
-								<li><a href="{% url 'posts:path_detalle_post' p.pk %}">{{p.titulo}}</a></li>
-							{% endfor %}
-							</ul>
-					</li>
-					<li>
+						<br />
 						<h3>Categorías</h3>
 							<ul class="col4">
 							{% for c in categorias %}
@@ -24,6 +17,16 @@
 							</ul>
 					</li>
 					<li>
+						<br />
+						<h3>Publicaciones</h3>
+							<ul class="col2">
+							{% for p in posts %}
+								<li><a href="{% url 'posts:path_detalle_post' p.pk %}">{{p.titulo}}</a></li>
+							{% endfor %}
+							</ul>
+					</li>
+					<li>
+						<br />
 						<h3>Tarjetas</h3>
 							<ul class="col3">
 							{% for t in tarjetas %}
