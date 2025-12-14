@@ -2,12 +2,15 @@
 
 {% block contenido %}
 	<main>
-	<h2>Actualizar Categoria</h2>
+	<h2>Actualizar Categoría</h2>
 		<section id="publicaciones">
-			<form method="POST" enctype="multipart/form-data"> {% csrf_token %}
-			{{form.as_p}}
-			<button type="submit">Editar</button>
-			<a href="{% url 'categoria:path_listar_categoria' t.pk %}">Cancelar</a>	
+			<form method="post" enctype="multipart/form-data">{% csrf_token %}
+				<ul class="grid">
+				{{ form.as_ul }}
+				<li class="centrado"><button type="submit">Enviar</button></li>
+				<li class="centrado"><a href="{% url 'categorias:path_listar_categorias' %}">Cancelar</a></li>
+				</ul>
+			</form>
 		</section>
 	</main>
 {% endblock contenido %}
