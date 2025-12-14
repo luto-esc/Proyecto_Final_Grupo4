@@ -6,7 +6,7 @@
 	{% if user.is_staff %}
 		<section class="panel_usuario">
 			<p>{{user.username}}, tus herramientas: 
-				<a href="{% url 'posts:path_crear_post' %}"> Crear Publicación</a>
+				<a href="{% url 'posts:path_crear_post' %}"> Crear Publicación</a>,
 				<a href=" {% url 'tarjetas:path_crear_tarjeta' %}">Crear tarjeta</a>
 			</p>
 		</section>

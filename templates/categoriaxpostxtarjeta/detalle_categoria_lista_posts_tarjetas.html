@@ -21,11 +21,11 @@
 	{% if user.is_staff %}
 		<section class="panel_usuario">
 			<p>{{user.username}}, tus herramientas: 
-				<a href="{% url 'posts:path_crear_post' %}"> Crear Publicación</a>,
-				<a href=" {% url 'tarjetas:path_crear_tarjeta' %}">Crear tarjeta</a><br />
-				<a href=" {% url 'categorias:path_crear_categoria' %}">Crear categoría</a>,
 				<a href="{% url 'categorias:path_actualizar_categoria' cat.pk %}" class="goma">Actualizar Categoría</a>,
-				<a href="{% url 'categorias:path_eliminar_categoria' cat.pk %}" class="borrar"> Eliminar Categoría</a>
+				<a href="{% url 'categorias:path_eliminar_categoria' cat.pk %}" class="borrar"> Eliminar Categoría</a><br />
+				<a href="{% url 'posts:path_crear_post' %}"> Crear Publicación</a>,
+				<a href=" {% url 'tarjetas:path_crear_tarjeta' %}">Crear tarjeta</a>,
+				<a href=" {% url 'categorias:path_crear_categoria' %}">Crear categoría</a>
 			</p>
 		</section>
 	{% endif %}
