@@ -125,7 +125,11 @@ header ul.autenticado li a:visited {
 	background-position-y: 50%;
 	background-position-x: 0.3em;
 }
-
+header form {
+	display: inline-block;
+	margin:0;
+	padding: 0;
+}
 header p {
 	color:rgb(255 255 245);
 	margin: auto;

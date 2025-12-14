@@ -23,6 +23,12 @@
 	{% if user.is_authenticated %}
 		<ul class="autenticado">
 			<li>Hola, {{ user.username }} :) </li>
+			<li>
+				<form method="POST" action="{% url 'usuarios:path_logout' %}">
+					{% csrf_token %}
+            		<button type="submit" value="Cerrar sesión">
+            	</form>
+			</li>
 			<li><a href="{% url 'usuarios:path_logout' %}" class="usuarios">Cerrar sesión</a></li>
 		</ul>
 	{% else %}
