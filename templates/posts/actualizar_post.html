@@ -4,10 +4,13 @@
 	<main>		
 		<h2>Modificar publicación</h2>
 		<section id="publicaciones">
-			<form method="POST" enctype="multipart/form-data">{% csrf_token %}
-				{{form.as_p}}
-				<button type="submit">Modificar</button>
-				<a href="{% url 'posts:path_listar_posts' %}">Cancelar</a>
+			<form method="post" enctype="multipart/form-data">{% csrf_token %}
+				<ul class="grid">
+				{{ form.as_ul }}
+				<!--<input type="submit" value="Ingresar">-->
+				<li class="centrado"><button>Enviar</button></li>
+				<li class="centrado"><a href="{% url 'posts:path_listar_posts' %}">Cancelar</a></li>
+				</ul>
 			</form>
 		</section>
 	</main>

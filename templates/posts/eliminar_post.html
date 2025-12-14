@@ -5,10 +5,13 @@
 		<h2>Eliminar publicación</h2>
 		<section id="publicaciones">
 			<p>¿Está seguro q desea eliminar la publicación?</p>
-			<form method="POST">{% csrf_token %}
-				{{ form }}
-				<button type="submit">Eliminar</button>
-				<a href="{% url 'posts:path_listar_posts' %}">Cancelar</a>
+			<form method="post" enctype="multipart/form-data">{% csrf_token %}
+				<ul class="grid">
+				{{ form.as_ul }}
+				<!--<input type="submit" value="Ingresar">-->
+				<li class="centrado"><button>Eliminar</button></li>
+				<li class="centrado"><a href="{% url 'posts:path_listar_posts' %}">Cancelar</a></li>
+				</ul>
 			</form>
 		</section>
 	</main>

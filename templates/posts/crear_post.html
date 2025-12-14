@@ -5,9 +5,12 @@
 		<h2>Crear publicación</h2>
 		<section id="publicaciones">
 			<form method="post" enctype="multipart/form-data">{% csrf_token %}
-				{{ form.as_p }}
-				<input type="submit" value="CONFIRMAR">
-				<a href="{% url 'posts:path_listar_posts' %}"> Cancelar</a>
+				<ul class="grid">
+				{{ form.as_ul }}
+				<!--<input type="submit" value="Ingresar">-->
+				<li class="centrado"><button>Enviar</button></li>
+				<li class="centrado"><a href="{% url 'posts:path_listar_posts' %}">Cancelar</a></li>
+				</ul>
 			</form>
 		</section>
 	</main>
