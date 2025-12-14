@@ -5,7 +5,7 @@ from django.shortcuts import render
 from .models import Post
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
 from django.urls import reverse_lazy
-from .forms import FormularioCrearPost, FormularioActualizarPost
+from .forms import FormularioCrearActualizarPost
 from apps.categorias.models import Categoria_Sobre
 from django.contrib.auth.mixins import UserPassesTestMixin
 
@@ -14,6 +14,7 @@ def listar_posts(request):
 	todos_posts = Post.objects.all()
 	context = {}
 	context['posts'] = todos_posts
+
 	
 	return render(request,'posts/lista_posts.html', context)
 
@@ -29,7 +30,7 @@ class Detalle_Post(DetailView):
 class Crear_Post(UserPassesTestMixin, CreateView):
 	model = Post
 	template_name = 'posts/crear_post.html'
-	form_class = FormularioCrearPost
+	form_class = FormularioCrearActualizarPost
 	success_url = reverse_lazy('posts:path_listar_posts')
 
 	def test_func(self):
@@ -42,7 +43,7 @@ class Crear_Post(UserPassesTestMixin, CreateView):
 class Actualizar_Post(UserPassesTestMixin, UpdateView):
 	model = Post
 	template_name = 'posts/actualizar_post.html'
-	form_class = FormularioActualizarPost
+	form_class = FormularioCrearActualizarPost
 	success_url = reverse_lazy('posts:path_listar_posts')
 
 	def test_func(self):
@@ -78,4 +79,7 @@ def filtro_post(request,pk):
 	context['categorias'] = categorias
 	
 	return render(request,'posts/lista_posts.html', context)
+
+	
+
 

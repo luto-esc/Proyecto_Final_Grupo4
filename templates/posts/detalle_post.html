@@ -22,13 +22,34 @@
 					</ul>
 				</section>
 				<p>{{ posts.cuerpo }}</p>
-			{% if user.is_authenticated %}
+			
+
 				<form method="POST" action="{% url 'comentarios:path_comentar' posts.pk %}">{% csrf_token %}
 					<textarea name="texto_comentado">
+					
 					</textarea>
 					<button type="submit">COMENTAR</button>
 				</form>
-			{% endif %}
+			
+				<h3>Comentarios</h3>
+				<div>
+					{% for com in posts.muestraComentarios %}
+						<div>
+							<p>{{com.usuario}} - {{com.fecha_creado}}</p>
+							<p>{{com.texto}}</p>
+							{% if user.is_staff %}
+								<a href="{% url 'comentarios:path_eliminar_comentario' com.pk %}">Eliminar</a>
+							{% else %}
+								{% if user == com.usuario %}
+								<a href="{% url 'comentarios:path_eliminar_comentario' com.pk %}">Eliminar</a>
+								<a href="{% url 'comentarios:path_actualizar_comentario' com.pk %}">Editar</a>
+								{% endif %}
+							{% endif %}
+						</div>
+					{% empty%}
+						<p>No hay comentarios</p>
+					{% endfor %}
+				</div>
 			</article>
 		</section>
 	</main>

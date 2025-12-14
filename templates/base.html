@@ -24,10 +24,9 @@
 		<ul class="autenticado">
 			<li>Hola, {{ user.username }} :) </li>
 			<li>
-				<a href="{% url 'usuarios:path_logout' %}">Cerrar sesión</a>
-				<!--<form method="POST" action="{% url 'usuarios:path_logout' %}">{% csrf_token %}
-					<input type="submit" value="Logout">
-				</form>-->
+				<form method="POST" action="{% url 'usuarios:path_logout' %}">{% csrf_token %}
+					<input type="submit" value="Cerrar sesión">
+				</form>
 			</li>
 		</ul>
 	{% else %}
