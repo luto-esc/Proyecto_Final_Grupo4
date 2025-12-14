@@ -14,9 +14,6 @@ def listar_tarjetas(request):
 	todas_tarjetas = Tarjeta.objects.all()
 	context = {}
 	context['tarjetas'] = todas_tarjetas
-
-	categorias = Categoria_Sobre.objects.all()
-	context['categorias'] = categorias
 	
 	return render(request,'tarjetas/lista_tarjetas.html', context)
 

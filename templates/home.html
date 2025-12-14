@@ -14,13 +14,15 @@
 
 	<main>		
 		<h2>Últimas publicaciones</h2>
-		<section id="publicaciones">
-		{% if user.is_staff %}
-			<p>
+	{% if user.is_staff %}
+		<section class="panel_usuario">
+			<p>{{user.username}}, tus herramientas: 
 				<a href="{% url 'posts:path_crear_post' %}"> Crear Publicación</a>
 				<a href=" {% url 'tarjetas:path_crear_tarjeta' %}">Crear tarjeta</a>
 			</p>
-		{% endif %}
+		</section>
+	{% endif %}
+		<section id="publicaciones">
 		{% for p in posts %}
 			<article>
 				<h3><a href="{% url 'posts:path_detalle_post' p.pk %}">{{p.titulo}}</a></h3>

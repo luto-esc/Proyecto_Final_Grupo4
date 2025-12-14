@@ -4,10 +4,13 @@
 	<main>
 	<h2>Actualizar Tarjeta de Flora</h2>
 		<section id="publicaciones">
-			<form method="POST" enctype="multipart/form-date"> {% csrf_token %}
-			{{form.as_p}}
-			<button type="sumbit">Crear</button>
-			<a href="{% url 'tarjetas:path_listar_tarjetas_flora' t.pk %}">Cancelar</a>	
+		<form method="post" enctype="multipart/form-data">{% csrf_token %}
+			<ul class="grid">
+			{{ form.as_ul }}
+			<li class="centrado"><button type="submit">Enviar</button></li>
+			<li class="centrado"><a href="{% url 'posts:path_listar_posts' %}">Cancelar</a></li>
+			</ul>
+		</form>
 		</section>
 	</main>
 {% endblock contenido %}
