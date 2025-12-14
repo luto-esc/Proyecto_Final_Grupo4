@@ -16,7 +16,10 @@
 		<h2>Últimas publicaciones</h2>
 		<section id="publicaciones">
 		{% if user.is_staff %}
-			<p><a href="{% url 'posts:path_crear_post' %}"> Crear Publicación</a></p>
+			<p>
+				<a href="{% url 'posts:path_crear_post' %}"> Crear Publicación</a>
+				<a href=" {% url 'tarjetas:path_crear_tarjeta' %}">Crear tarjeta</a>
+			</p>
 		{% endif %}
 		{% for p in posts %}
 			<article>
@@ -45,9 +48,6 @@
 		</section>
 
 		<h2>Tarjetas</h2>
-		{% if user.is_staff %}
-			<a href=" {% url 'tarjetas:path_crear_tarjeta' %}">Crear tarjeta</a>
-		{% endif %}
 		<section id="tarjetas">
 		{% for t in tarjetas %}
 			<article>
@@ -57,8 +57,10 @@
 				</a>
 				<p>{{t.descripcion}}</p>
 				{% if user.is_staff%}
-					<a href="{% url 'tarjetas:path_actualizar_tarjeta' t.pk %}">Actualizar</a>
-					<a href="{% url 'tarjetas:path_eliminar_tarjeta' t.pk %}">Eliminar</a>
+					<p>
+						<a href="{% url 'tarjetas:path_actualizar_tarjeta' t.pk %}">Actualizar</a> | 
+						<a href="{% url 'tarjetas:path_eliminar_tarjeta' t.pk %}">Eliminar</a>
+					</p>
 				{% endif %}
 			</article>
 		{% endfor %}
