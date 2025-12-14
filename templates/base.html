@@ -41,7 +41,7 @@
 		<h3>Categorias</h3>
 		<ul>
 		{% for c in categorias %}
-			<li><a href="{% url 'posts:path_filtrados_categoria_post' c.pk %}">{{ c.sobre }}</a></li>
+			<li><a href="{% url 'categorias:path_filtrado_categoria_todo' c.pk %}">{{ c.sobre }}</a></li>
 		{% endfor %}
 		</ul>
 	</aside>

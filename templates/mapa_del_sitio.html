@@ -5,7 +5,28 @@
 		<h2>Mapa del sitio</h2>
 		<section id="publicaciones">
 			<article>
-				<p>Este es el mapa del sitio</p>
+				<h3>chacoverde</h3>
+				<ul class="mapa">
+					<li>
+						<h3>Publicaciones</h3>
+							<ul>
+							{% for p in posts %}
+								<li><a href="{% url 'posts:path_detalle_post' p.pk %}">{{p.titulo}}</li>
+							{% endfor %}
+							</ul>
+					</li>
+					<li>
+						<h3>Categorías</h3>
+							<ul>
+							{% for c in categorias %}
+								<li><a href="{% url 'categorias:path_filtrado_categoria_todo' c.pk %}">{{p.titulo}}</li>
+							{% endfor %}
+							</ul>
+					</li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
 			</article>
 		</section>
 	</main>

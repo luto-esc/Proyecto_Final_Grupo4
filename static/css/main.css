@@ -312,6 +312,10 @@ main section#publicaciones article h3 {
 main section#publicaciones article p {
 	margin-bottom:1em
 }
+main section#publicaciones article ul.mapa, 
+main section#publicaciones article ul.mapa li {
+	margin-left:2em;
+}
 main section#publicaciones section.post_info {
 	padding:0.5em;
 	background-color:white;

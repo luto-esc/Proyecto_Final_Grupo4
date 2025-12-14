@@ -17,9 +17,9 @@ def Home(request):
     return render(request, 'home.html', context)
 
 def MapaDelSitio(request):
-    todos_posts = Post.objects.all()
-    categorias = Categoria_Sobre.objects.all()
-    tarjetas = Tarjeta.objects.all()
+    todos_posts = Post.objects.order_by("titulo")
+    categorias = Categoria_Sobre.objects.order_by("sobre")
+    tarjetas = Tarjeta.objects.order_by("nombre")
 
     context = {}
     context['posts'] = todos_posts
