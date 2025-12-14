@@ -397,10 +397,12 @@ main section#publicaciones section.comentarios h3 {
 }
 main section#publicaciones .comentarios_info {
 	margin: 0;
+	columns: 1;
 }
 main section#publicaciones .comentarios_info p {
 	font-size: 1.2rem;
 	margin-left:1em;
+	margin: 0;
 }
 main section#publicaciones article .autor,
 main section#publicaciones article .fecha,
