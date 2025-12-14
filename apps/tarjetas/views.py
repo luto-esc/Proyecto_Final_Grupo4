@@ -39,7 +39,7 @@ class Crear_Tarjeta(UserPassesTestMixin, CreateView):
 			return False	
 
 #------------------ACTUALIZAR---------STAFFUSERS----------
-class Actualizar_Tarjeta(UserPassesTestMixin, CreateView):
+class Actualizar_Tarjeta(UserPassesTestMixin, UpdateView):
 	model = Tarjeta
 	template_name = 'tarjetas/actualizar_tarjeta.html'
 	form_class = FormularioCrearActualizarTarjeta
