@@ -17,7 +17,7 @@
                 <li><a href="{% url 'path_home' %}">Inicio</a></li>
                 <li><a href="{% url 'posts:path_listar_posts' %}">Publicaciones</a></li>
                 <li><a href="{% url 'categorias:path_listar_categorias' %}">Categorias</a></li>
-                <li><a href="{% url 'path_nosotros' %}">Nosotros</a></li>
+                <li><a href="{% url 'usuarios:path_contacto' %}">Nosotros</a></li>
 			</ul>
 		</nav>
 	{% if user.is_authenticated %}

@@ -13,8 +13,13 @@
 				<h3>Proyecto Informatorio</h3>
 				<p>Este trabajo lo hemos hecho Lucio y Luciano, integrantes del Grupo 4 de la etapa 2 del Informatorio 2025. Es una aplicación web con formato de blog desarrollada en Python con el framework Django, HTML y CSS.</p>
 				<p>Producto artesanal, hecho en Resistencia, Chaco.</p>
-				<h3>Contacto</h3>
-				<p>(insertar formulario de contacto aquí)</p>
+				<h3>Mandar un mensaje</h3>
+				<form method="post" enctype="multipart/form-data">{% csrf_token %}
+					<ul class="grid">
+						{{ form.as_ul }}
+						<li class="centrado"><button>Enviar</button></li>
+					</ul>
+				</form>
 			</article>
 		</section>
 	</main>

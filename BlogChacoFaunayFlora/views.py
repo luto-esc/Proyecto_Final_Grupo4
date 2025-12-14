@@ -14,9 +14,3 @@ def Home(request):
     context['tarjetas'] = tarjetas
 
     return render(request, 'home.html', context)
-
-def Contacto(request):
-    return render(request, 'contacto.html')
-
-def Nosotros(request):
-    return render(request, 'nosotros.html')
