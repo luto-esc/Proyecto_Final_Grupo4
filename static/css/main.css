@@ -106,11 +106,7 @@ header ul li {
 	color: rgb(255 255 245);
 	text-shadow: 1px 1px 1px rgb(51 51 51 / 75%);
 }
-header ul.autenticado li,
-header ul.autenticado li a,
-header ul.autenticado li a:link,
-header ul.autenticado li a:hover,
-header ul.autenticado li a:visited {
+header ul.autenticado form button {
 	font-size:1em;
 	font-weight:bold;
 	padding:1em;
