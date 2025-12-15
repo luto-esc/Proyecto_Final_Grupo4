@@ -107,6 +107,7 @@ header ul li {
 	text-shadow: 1px 1px 1px rgb(51 51 51 / 75%);
 }
 header ul.autenticado li form button {
+	color: white;
 	font-size:1em;
 	font-weight:bold;
 	padding:1em;
