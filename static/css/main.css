@@ -109,7 +109,6 @@ header ul li {
 header ul.autenticado li form button {
 	color: white;
 	font-size:1em;
-	font-weight:bold;
 	padding:1em;
 	padding-left:2.2em;
 	background-image:url("../img/circle-user-round.png");
