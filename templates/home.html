@@ -62,7 +62,7 @@
 					<a href="{% url 'categorias:path_filtrado_categoria_todo' c.pk %}">{{c.sobre}}</a>
 				{% endfor %}
 				</p>
-				<p>{{t.descripcion}}</p>
+				<p>{{t.descripcion|truncatechars:100}}</p>
 				{% if user.is_staff%}
 					<p>
 						<a href="{% url 'tarjetas:path_actualizar_tarjeta' t.pk %}">Actualizar</a> | 
