@@ -113,11 +113,6 @@ header ul.autenticado li a:hover,
 header ul.autenticado li a:visited {
 	font-size:1em;
 	font-weight:bold;
-}
-header ul.autenticado li a,
-header ul.autenticado li a:link,
-header ul.autenticado li a:hover,
-header ul.autenticado li a:visited {
 	padding:1em;
 	padding-left:2.2em;
 	background-image:url("../img/circle-user-round.png");
